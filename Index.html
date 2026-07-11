@@ -182,6 +182,8 @@
   }
   .next:hover{background:#4cf0a9}
   .next.show{display:block;animation:fade .3s}
+  .next.fatal{background:var(--red);color:#fff}
+  .next.fatal:hover{background:#ff7079}
 
   .screen{padding:48px 34px;text-align:center}
   /* selection screens are content-heavy: tighter vertical padding, full internal scroll */
@@ -16026,6 +16028,705 @@ const TOPICS = [
 "qid": "chd-30"
 }
 ]
+},
+{
+"id": "neonatalexam",
+"name": "Neonatal Examination",
+"short": "Neonatal Exam",
+"cards": [
+{
+"q": "A newborn presents with a heart rate of 90 bpm, a slow/irregular respiratory effort, some flexion of the extremities, a grimace when stimulated, and a pink body with bluish hands and feet. What is the calculated APGAR score for this infant?",
+"options": [
+"4",
+"5",
+"6",
+"7"
+],
+"a": "5",
+"hint": "Assign 1 point for each category where the finding is present but not optimal.",
+"rationale": "The infant receives 1 point each for pulse (< 100), respiration (irregular), activity (some flexion), grimace (grimace), and appearance (acrocyanosis).",
+"qid": "neonatalexam-01"
+},
+{
+"q": "Which of the following is considered a normal physiological weight loss for a term neonate during the first 5 days of life?",
+"options": [
+"10%",
+"15%",
+"3%",
+"7%"
+],
+"a": "7%",
+"hint": "Consider the percentage that represents the standard acceptable threshold for initial weight decline.",
+"rationale": "A weight loss of up to 7% is expected as the infant adjusts to extrauterine life and fluid shifts.",
+"qid": "neonatalexam-02"
+},
+{
+"q": "What is the clinical significance of a 'white reflex' (leukocoria) when performing a red reflex check on a newborn?",
+"options": [
+"It suggests the presence of a congenital cataract or retinoblastoma.",
+"It is a normal finding in infants with dark skin pigmentation.",
+"It is a sign of ophthalmia neonatorum caused by chlamydia.",
+"It indicates a benign accumulation of vernix caseosa in the conjunctiva."
+],
+"a": "It suggests the presence of a congenital cataract or retinoblastoma.",
+"hint": "Think about conditions that might block light or create an abnormal reflection within the globe of the eye.",
+"rationale": "Leukocoria indicates an obstruction or mass within the eye that prevents the normal reflection of light from the retina.",
+"qid": "neonatalexam-03"
+},
+{
+"q": "During a physical examination, the clinician is unable to palpate the femoral pulses. This finding is a critical 'red flag' for which condition?",
+"options": [
+"Patent ductus arteriosus",
+"Atrial septal defect",
+"Tetralogy of Fallot",
+"Coarctation of the aorta"
+],
+"a": "Coarctation of the aorta",
+"hint": "Identify the cardiac malformation that involves a physical obstruction in the main artery leading to the lower body.",
+"rationale": "Narrowing of the aorta restricts blood flow to the lower body, resulting in weak or absent femoral pulses.",
+"qid": "neonatalexam-04"
+},
+{
+"q": "When screening for Congenital Hypothyroidism, what is the appropriate clinical action for a heel prick TSH level of 8 mU/mL?",
+"options": [
+"Repeat the screening test at 15 to 30 days of life.",
+"No action is required as this is a normal physiological result.",
+"Immediately initiate levothyroxine treatment.",
+"Perform urgent secondary testing on capillary and venous blood for TSH and free T4."
+],
+"a": "Repeat the screening test at 15 to 30 days of life.",
+"hint": "Recall the protocol for results that fall into the 'borderline' category.",
+"rationale": "TSH levels between 6 and 10 mU/mL are considered borderline and require a follow-up test to ensure normalization.",
+"qid": "neonatalexam-05"
+},
+{
+"q": "Which newborn finding is characterized by subperiosteal bleeding that does not cross cranial suture lines?",
+"options": [
+"Molding",
+"Subgaleal hemorrhage",
+"Caput succedaneum",
+"Cephalohematoma"
+],
+"a": "Cephalohematoma",
+"hint": "Differentiate between superficial edema and deeper bleeding based on the anatomical boundaries.",
+"rationale": "Because the bleeding occurs beneath the periosteum of a specific bone, it is physically limited by the sutures.",
+"qid": "neonatalexam-06"
+},
+{
+"q": "In the APGAR scoring system, what observation would earn a score of 2 in the 'Grimace' category?",
+"options": [
+"No response to suctioning or stimulation.",
+"A slight facial grimace upon stimulation.",
+"A weak cry with irregular gasping.",
+"A vigorous sneeze or cough."
+],
+"a": "A vigorous sneeze or cough.",
+"hint": "Consider the most active and protective reflex response possible for a neonate.",
+"rationale": "Active reflexes like sneezing or coughing indicate a healthy, robust response to stimulation.",
+"qid": "neonatalexam-07"
+},
+{
+"q": "Which of the following descriptions best fits the 'Moro reflex'?",
+"options": [
+"A startle response followed by an embrace-like motion of the arms.",
+"Flexion of the toes when the sole of the foot is stroked.",
+"Rhythmic stepping movements when held upright on a flat surface.",
+"The infant turns their head toward a touch on the cheek."
+],
+"a": "A startle response followed by an embrace-like motion of the arms.",
+"hint": "This reflex is commonly known as the 'startle reflex' and involves a characteristic arm movement.",
+"rationale": "The Moro reflex is a primitive startle response involving arm extension and then flexion.",
+"qid": "neonatalexam-08"
+},
+{
+"q": "What is the primary reason Vitamin K is administered intramuscularly to all newborns shortly after birth?",
+"options": [
+"To stimulate the first passage of meconium.",
+"To reduce the risk of kernicterus.",
+"To prevent hemorrhagic disease of the newborn.",
+"To prevent ophthalmia neonatorum."
+],
+"a": "To prevent hemorrhagic disease of the newborn.",
+"hint": "Focus on the role this vitamin plays in the blood's ability to clot.",
+"rationale": "Newborns have low levels of Vitamin K, which is essential for blood clotting factors.",
+"qid": "neonatalexam-09"
+},
+{
+"q": "An infant is noted to have jaundice at 12 hours of life. Based on neonatal screening guidelines, how should this be interpreted?",
+"options": [
+"This is common in breastfed infants and requires no action.",
+"This is likely physiological jaundice and should be monitored.",
+"This is always pathological and requires immediate investigation.",
+"This is a normal result of the breakdown of maternal hemoglobin."
+],
+"a": "This is always pathological and requires immediate investigation.",
+"hint": "Consider the significance of timing when jaundice appears very early in the neonatal period.",
+"rationale": "Jaundice appearing within the first 24 hours is a clinical warning sign of underlying disease.",
+"qid": "neonatalexam-10"
+},
+{
+"q": "Which set of vital signs falls within the normal range for a healthy term newborn?",
+"options": [
+"HR 140 bpm, RR 50 breaths/min, Temp 37.0°C",
+"HR 100 bpm, RR 20 breaths/min, Temp 35.5°C",
+"HR 170 bpm, RR 70 breaths/min, Temp 38.0°C",
+"HR 110 bpm, RR 30 breaths/min, Temp 36.0°C"
+],
+"a": "HR 140 bpm, RR 50 breaths/min, Temp 37.0°C",
+"hint": "Check the ranges for heart rate, respiratory rate, and axillary temperature provided in the text.",
+"rationale": "These values sit comfortably within the normal ranges of 120-160 bpm, 35-60 breaths/min, and 36.5-37.5°C.",
+"qid": "neonatalexam-11"
+},
+{
+"q": "The Barlow and Ortolani maneuvers are essential components of the neonatal physical exam used to screen for:",
+"options": [
+"Congenital clubfoot.",
+"Developmental dysplasia of the hip.",
+"Syndactyly and polydactyly.",
+"Fractured clavicle from birth trauma."
+],
+"a": "Developmental dysplasia of the hip.",
+"hint": "These tests specifically evaluate the stability of the largest joint in the lower body.",
+"rationale": "These maneuvers check if the femoral head can be displaced from or relocated into the acetabulum.",
+"qid": "neonatalexam-12"
+},
+{
+"q": "What is the expected timeframe for a healthy newborn to pass their first meconium stool?",
+"options": [
+"Within 48 hours",
+"Within 72 hours",
+"Within 12 hours",
+"Within 24 hours"
+],
+"a": "Within 48 hours",
+"hint": "The deadline for the first bowel movement is longer than the deadline for the first urination.",
+"rationale": "Clinicians monitor for meconium passage up to 48 hours before investigating for potential obstructions.",
+"qid": "neonatalexam-13"
+},
+{
+"q": "An examiner notes bluish pigmentation over the sacral area of a newborn. This finding is most likely:",
+"options": [
+"A precursor to a malignant melanoma.",
+"A Mongolian spot, which is a benign skin finding.",
+"Evidence of central cyanosis.",
+"A sign of physical abuse or birth trauma."
+],
+"a": "A Mongolian spot, which is a benign skin finding.",
+"hint": "Identify the common, harmless term for localized blue-grey pigmentation in neonates.",
+"rationale": "Mongolian spots are common, harmless blue-grey pigmentations typically found on the lower back or sacrum.",
+"qid": "neonatalexam-14"
+},
+{
+"q": "Why is the anterior fontanelle palpated during the physical examination?",
+"options": [
+"To determine the exact gestational age of the infant.",
+"To assess intracranial pressure and hydration status.",
+"To screen for congenital cataracts.",
+"To check for premature fusion of the cranial sutures."
+],
+"a": "To assess intracranial pressure and hydration status.",
+"hint": "The 'soft spot' acts as a window into the infant's internal fluid balance and head pressure.",
+"rationale": "A bulging fontanelle can indicate high pressure, while a sunken one can indicate dehydration.",
+"qid": "neonatalexam-15"
+},
+{
+"q": "Which of the following is an immediate step in delivery room care aimed at preventing heat loss?",
+"options": [
+"Clamping the umbilical cord",
+"Providing Vitamin K",
+"Palpating the femoral pulses",
+"Promoting skin-to-skin contact"
+],
+"a": "Promoting skin-to-skin contact",
+"hint": "Focus on the methods mentioned in the 'Immediate Care' section that involve direct warmth.",
+"rationale": "Skin-to-skin contact with the mother provides a natural heat source to help the baby maintain its temperature.",
+"qid": "neonatalexam-16"
+},
+{
+"q": "An infant with a TSH level > 10 mU/mL on a screening test requires which urgent secondary action?",
+"options": [
+"Performing a thyroid ultrasound immediately.",
+"Repeat the heel prick test in 2 weeks.",
+"Starting phototherapy for associated jaundice.",
+"Testing capillary and venous blood for TSH and free T4."
+],
+"a": "Testing capillary and venous blood for TSH and free T4.",
+"hint": "High TSH levels indicate a high risk that requires immediate biochemical confirmation.",
+"rationale": "Urgent confirmatory testing is necessary to diagnose congenital hypothyroidism and prevent mental retardation.",
+"qid": "neonatalexam-17"
+},
+{
+"q": "What is the clinical significance of finding 'ear tags' or appendages during a neonatal exam?",
+"options": [
+"They indicate a high risk for trisomy 21.",
+"They are associated with congenital hearing loss.",
+"They suggest a cleft palate that may not be visible.",
+"They warrant an ultrasound to rule out kidney malformations."
+],
+"a": "They warrant an ultrasound to rule out kidney malformations.",
+"hint": "Consider the internal organ system that shares developmental timing with the ears.",
+"rationale": "There is a known clinical association between external ear anomalies and renal issues.",
+"qid": "neonatalexam-18"
+},
+{
+"q": "A newborn's skin is covered in a waxy, white substance. This is known as:",
+"options": [
+"Vernix caseosa",
+"Erythema toxicum",
+"Milia",
+"Lanugo"
+],
+"a": "Vernix caseosa",
+"hint": "This term describes the 'cheesy' protective layer present at birth.",
+"rationale": "Vernix caseosa is the waxy, protective coating found on the skin of many newborns.",
+"qid": "neonatalexam-19"
+},
+{
+"q": "Which APGAR score range indicates that a newborn is experiencing 'severe cardiopulmonary depression'?",
+"options": [
+"Score greater than 7",
+"Score between 4 and 6",
+"Score of 7",
+"Score lower than 4"
+],
+"a": "Score lower than 4",
+"hint": "Identify the low-score threshold that mandates immediate resuscitation.",
+"rationale": "Scores from 0 to 3 indicate a critical need for immediate resuscitation and life support.",
+"qid": "neonatalexam-20"
+},
+{
+"q": "What is the normal range for a term newborn's head circumference?",
+"options": [
+"30-32 cm",
+"42-45 cm",
+"38-40 cm",
+"33-37 cm"
+],
+"a": "33-37 cm",
+"hint": "Refer to the 'Measurements' section for the standard centimeters recorded.",
+"rationale": "This is the standard range for head circumference in a healthy term newborn.",
+"qid": "neonatalexam-21"
+},
+{
+"q": "During the respiratory assessment, the clinician observes 'grunting' and 'flaring'. These are signs of:",
+"options": [
+"A robust APGAR score for respiration.",
+"Respiratory distress.",
+"Normal physiological adaptation.",
+"The effects of high bilirubin levels."
+],
+"a": "Respiratory distress.",
+"hint": "Think about what these physical symptoms represent in terms of the infant's work of breathing.",
+"rationale": "Grunting, nasal flaring, and retractions are all clinical markers that the infant is struggling to breathe.",
+"qid": "neonatalexam-22"
+},
+{
+"q": "What is 'kernicterus'?",
+"options": [
+"The failure of the thyroid gland to develop properly.",
+"A type of subgaleal hemorrhage caused by birth trauma.",
+"A benign skin rash common in the first week of life.",
+"Bilirubin-induced encephalopathy resulting from high-risk jaundice."
+],
+"a": "Bilirubin-induced encephalopathy resulting from high-risk jaundice.",
+"hint": "This term describes a serious neurological complication associated with untreated jaundice.",
+"rationale": "When bilirubin levels exceed safe limits (95th percentile), it can cross into the brain and cause permanent damage.",
+"qid": "neonatalexam-23"
+},
+{
+"q": "Which primitive reflex involves the infant making stepping motions when held upright with feet touching a surface?",
+"options": [
+"Stepping reflex",
+"Moro reflex",
+"Grasp reflex",
+"Barlow maneuver"
+],
+"a": "Stepping reflex",
+"hint": "The name of the reflex directly describes the motion the infant performs.",
+"rationale": "This reflex mimics walking and is a normal primitive finding in neonates.",
+"qid": "neonatalexam-24"
+},
+{
+"q": "What treatment is indicated for an infant whose bilirubin levels plot above the 95th percentile on an age-specific nomogram?",
+"options": [
+"Immediate phototherapy or exchange transfusion.",
+"Administration of intramuscular Vitamin K.",
+"Increasing the frequency of breastfeeding only.",
+"Observation and repeat testing in 24 hours."
+],
+"a": "Immediate phototherapy or exchange transfusion.",
+"hint": "Identify the standard medical interventions used to treat severe neonatal jaundice.",
+"rationale": "These interventions are necessary to rapidly lower bilirubin and prevent brain damage.",
+"qid": "neonatalexam-25"
+},
+{
+"q": "True or False: A healthy term infant typically displays axial hypotonia combined with increased flexor tone in the limbs.",
+"options": [
+"False",
+"True"
+],
+"a": "True",
+"hint": "Recall the neurological assessment of tone in the trunk versus the extremities.",
+"rationale": "This combination of trunk 'floppiness' and limb 'flexion' is the characteristic neurological posture of a healthy term newborn.",
+"qid": "neonatalexam-26"
+}
+]
+},
+{
+"id": "itp",
+"name": "Immune Thrombocytopenia (ITP)",
+"short": "ITP",
+"cards": [
+{
+"q": "What is the primary diagnostic criterion regarding the platelet count for Immune Thrombocytopenia (ITP)?",
+"options": [
+"A platelet count of < 150,000/μ L with associated anemia.",
+"A platelet count of < 50,000/μ L occurring after a viral illness.",
+"An isolated platelet count of < 100,000/μ L on at least two occasions.",
+"An isolated platelet count of < 20,000/μ L on a single occasion."
+],
+"a": "An isolated platelet count of < 100,000/μ L on at least two occasions.",
+"hint": "Consider the specific numerical threshold and the requirement for consistency across multiple tests.",
+"rationale": "ITP is defined by a specific quantitative threshold of isolated thrombocytopenia measured multiple times to ensure accuracy.",
+"qid": "itp-01"
+},
+{
+"q": "Which of the following describes the 'molecular mimicry' mechanism in ITP pathophysiology?",
+"options": [
+"The spleen produces enzymes that digest platelets before they can reach the general circulation.",
+"Cytotoxic T-cells directly destroy megakaryocytes in the bone marrow to prevent platelet maturation.",
+"Platelets are rapidly consumed within the vascular endothelium due to widespread inflammation.",
+"Viral antigens resemble host platelet glycoproteins, leading B-cells to produce autoantibodies against the platelets."
+],
+"a": "Viral antigens resemble host platelet glycoproteins, leading B-cells to produce autoantibodies against the platelets.",
+"hint": "Think about how the immune system might confuse a foreign virus with the body's own cell surface proteins.",
+"rationale": "Exogenous triggers like viruses can share structural similarities with host proteins, causing the immune system to misidentify platelets as pathogens.",
+"qid": "itp-02"
+},
+{
+"q": "Why is serologic testing for antiplatelet autoantibodies negative in approximately 50% of ITP patients?",
+"options": [
+"Platelet counts are too low to allow for the concentration of antibodies during the testing process.",
+"ITP is primarily a T-cell mediated disease, so B-cells do not produce antibodies in half of the cases.",
+"The autoantibodies are often bound to platelets in the spleen or liver rather than circulating in the plasma.",
+"The antibodies used in lab testing only recognize GPIb/IX and not GPIIb/IIIa antigens."
+],
+"a": "The autoantibodies are often bound to platelets in the spleen or liver rather than circulating in the plasma.",
+"hint": "Consider the physical location of the antibodies during the active disease process.",
+"rationale": "Autoantibodies are frequently sequestered in the organs where platelet destruction occurs, leading to low detectable levels in free-flowing blood.",
+"qid": "itp-03"
+},
+{
+"q": "According to the classification by phase, how is 'Persistent ITP' defined?",
+"options": [
+"Disease that fails to respond to second-line therapies.",
+"Disease lasting less than 3 months since the initial diagnosis.",
+"Disease lasting between 3 and 12 months.",
+"Disease lasting for more than 12 months."
+],
+"a": "Disease lasting between 3 and 12 months.",
+"hint": "This classification is based on a specific timeframe following the initial diagnosis.",
+"rationale": "Persistent ITP bridges the gap between newly diagnosed cases and chronic cases that last over a year.",
+"qid": "itp-04"
+},
+{
+"q": "A patient presents with epistaxis (nosebleeds) and oral bleeding in addition to skin petechiae. Which clinical type of ITP does this represent?",
+"options": [
+"Newly Diagnosed",
+"Type B (Moderate)",
+"Type A (Mild)",
+"Type C (Severe)"
+],
+"a": "Type B (Moderate)",
+"hint": "Distinguish between skin-only symptoms and those involving the mucous membranes.",
+"rationale": "Type B is characterized by the progression from purely cutaneous signs to mucosal involvement, such as nose or gum bleeding.",
+"qid": "itp-05"
+},
+{
+"q": "Which of the following is a 'red flag' during the physical exam that might suggest a diagnosis other than primary ITP?",
+"options": [
+"Abrupt onset of bruising",
+"Petechiae on the lower extremities",
+"Isolated low platelet count",
+"Hepatosplenomegaly"
+],
+"a": "Hepatosplenomegaly",
+"hint": "Look for a symptom that indicates an abnormality in organ size or systemic involvement.",
+"rationale": "The presence of an enlarged liver or spleen suggests an underlying malignancy or systemic disease, as primary ITP usually presents with normal physical findings aside from bleeding.",
+"qid": "itp-06"
+},
+{
+"q": "What is the primary goal of medical management for a pediatric patient with ITP?",
+"options": [
+"To prevent the transition from Newly Diagnosed to Persistent ITP.",
+"To restore the platelet count to a normal range of > 150,000/μ L.",
+"To eliminate all circulating autoantibodies through immunosuppression.",
+"To achieve a safe platelet count to prevent life-threatening bleeding."
+],
+"a": "To achieve a safe platelet count to prevent life-threatening bleeding.",
+"hint": "The focus is on preventing the most dangerous complications rather than achieving a specific laboratory number.",
+"rationale": "Management focuses on clinical safety and quality of life rather than forcing the platelet count back into the normal range.",
+"qid": "itp-07"
+},
+{
+"q": "For a child with ITP showing only skin manifestations (petechiae and ecchymoses), what is the recommended management strategy?",
+"options": [
+"Splenectomy within the first week of diagnosis",
+"Observation (\"Wait and See\")",
+"Prophylactic platelet transfusion",
+"Immediate initiation of high-dose corticosteroids"
+],
+"a": "Observation (\"Wait and See\")",
+"hint": "Consider the high rate of spontaneous remission in pediatric cases.",
+"rationale": "Since pediatric ITP is often self-limiting and the risk of severe bleeding is low, observation is preferred to avoid the side effects of medications.",
+"qid": "itp-08"
+},
+{
+"q": "Which first-line treatment for ITP has the fastest onset of action (1–4 days)?",
+"options": [
+"Intravenous Immunoglobulin (IVIG)",
+"Prednisone",
+"Rituximab",
+"Anti-D Immunoglobulin"
+],
+"a": "Intravenous Immunoglobulin (IVIG)",
+"hint": "This treatment works by competitively blocking receptors on macrophages.",
+"rationale": "IVIG provides a rapid increase in platelet counts by quickly blocking the receptors responsible for platelet clearance.",
+"qid": "itp-09"
+},
+{
+"q": "What is the specific mechanism by which Thrombopoietin Receptor Agonists (TPO-RAs) like Eltrombopag work?",
+"options": [
+"They stimulate platelet production by binding to TPO receptors on megakaryocytes.",
+"They prevent the liver from clearing antibody-coated platelets.",
+"They coat red blood cells to distract the spleen from destroying platelets.",
+"They deplete the B-cell population that produces antiplatelet autoantibodies."
+],
+"a": "They stimulate platelet production by binding to TPO receptors on megakaryocytes.",
+"hint": "Think about how the body naturally regulates the creation of new platelets in the bone marrow.",
+"rationale": "TPO-RAs address the 'impaired production' aspect of ITP by encouraging the bone marrow to produce more platelets.",
+"qid": "itp-10"
+},
+{
+"q": "Which complication is associated with a single dose of 75 μ g/kg of Anti-D Immunoglobulin?",
+"options": [
+"Aseptic meningitis and severe headaches.",
+"Progressive multifocal leukoencephalopathy (PML).",
+"Extravascular hemolysis and hemolytic anemia.",
+"Cataracts and transaminitis."
+],
+"a": "Extravascular hemolysis and hemolytic anemia.",
+"hint": "The drug's mechanism involves tagging red blood cells for destruction to spare platelets.",
+"rationale": "Because Anti-D works by targeting Rh(D)-positive red blood cells, it inherently causes some degree of red cell destruction.",
+"qid": "itp-11"
+},
+{
+"q": "Why is it recommended to perform a bone marrow aspirate before starting corticosteroid therapy in atypical cases of suspected ITP?",
+"options": [
+"Steroids cause immediate bone marrow suppression that must be documented.",
+"The bone marrow aspirate is required to confirm the presence of antiplatelet antibodies.",
+"It is needed to check for the maturation of megakaryocytes in all primary cases.",
+"Steroids can mask the presence of underlying leukemia."
+],
+"a": "Steroids can mask the presence of underlying leukemia.",
+"hint": "Consider the risk of treating a symptom while potentially hiding a more serious underlying malignancy.",
+"rationale": "Corticosteroids are part of the treatment for leukemia and can temporarily suppress malignant cells, leading to a delayed diagnosis if the cause is not ITP.",
+"qid": "itp-12"
+},
+{
+"q": "What dietary restriction is necessary for patients taking the TPO-RA Eltrombopag?",
+"options": [
+"Patients must avoid all Vitamin K-rich foods to prevent clotting.",
+"It must be taken with a high-fat meal to increase bioavailability.",
+"It should be taken strictly on an empty stomach with only distilled water.",
+"It must be taken 4 hours after and 2 hours before food containing cations like calcium or iron."
+],
+"a": "It must be taken 4 hours after and 2 hours before food containing cations like calcium or iron.",
+"hint": "This medication interacts with specific minerals commonly found in dairy and supplements.",
+"rationale": "Cations can interfere with the absorption of Eltrombopag, necessitating careful timing around meals.",
+"qid": "itp-13"
+},
+{
+"q": "What is the approximate incidence rate of intracranial hemorrhage (ICH) in pediatric ITP cases?",
+"options": [
+"0.1% to 0.5%",
+"5.8%",
+"9.0%",
+"1.0% to 2.5%"
+],
+"a": "0.1% to 0.5%",
+"hint": "The value represents a very small fraction of one percent.",
+"rationale": "Although ICH is the most feared complication, it is fortunately extremely rare in the pediatric population.",
+"qid": "itp-14"
+},
+{
+"q": "Which condition is NOT listed as a potential cause of Secondary ITP?",
+"options": [
+"Helicobacter pylori infection",
+"HIV",
+"Systemic Lupus Erythematosus (SLE)",
+"Iron Deficiency Anemia"
+],
+"a": "Iron Deficiency Anemia",
+"hint": "Identify which of these is a nutritional deficiency rather than an immune-mediated or infectious trigger.",
+"rationale": "Secondary ITP is triggered by specific infections (HIV, Hep B/C, H. pylori) or autoimmune disorders (SLE), whereas iron deficiency is a nutritional issue.",
+"qid": "itp-15"
+},
+{
+"q": "True or False: Most pediatric cases of ITP do not show a gender predominance, unlike the adult form of the disease.",
+"options": [
+"False",
+"True"
+],
+"a": "True",
+"hint": "Think about how pediatric ITP differs from the adult-onset version regarding patient demographics.",
+"rationale": "In childhood, ITP affects males and females nearly equally, whereas adult-onset ITP is significantly more common in females.",
+"qid": "itp-16"
+},
+{
+"q": "A peripheral blood smear in a patient with ITP is used primarily to rule out which of the following?",
+"options": [
+"Platelet macrocytosis and abnormal white/red cell lines.",
+"Specific viral antigens from a recent febrile illness.",
+"The presence of H. pylori antibodies.",
+"The concentration of circulating IVIG."
+],
+"a": "Platelet macrocytosis and abnormal white/red cell lines.",
+"hint": "The smear is used to ensure that only the platelets are affected and that their size is typical for ITP.",
+"rationale": "Large platelets can suggest inherited conditions, and abnormalities in other cell lines might point to bone marrow failure or leukemia.",
+"qid": "itp-17"
+},
+{
+"q": "Which second-line treatment is a monoclonal antibody that targets CD20 on B-cells?",
+"options": [
+"Eltrombopag",
+"Romiplostim",
+"Prednisone",
+"Rituximab"
+],
+"a": "Rituximab",
+"hint": "This agent is an 'anti-CD20' therapy often used for refractory cases.",
+"rationale": "Rituximab works by depleting the B-cells that are responsible for producing the autoantibodies that target platelets.",
+"qid": "itp-18"
+},
+{
+"q": "What is the seasonal peak for the diagnosis of acute pediatric ITP?",
+"options": [
+"Autumn",
+"Winter",
+"Spring",
+"Summer"
+],
+"a": "Spring",
+"hint": "The peak corresponds with the typical timing of post-viral immune responses in children.",
+"rationale": "ITP frequently follows viral illnesses, which often results in a peak of cases during the spring season.",
+"qid": "itp-19"
+},
+{
+"q": "What percentage of children with ITP are expected to achieve spontaneous remission within 6–12 months?",
+"options": [
+"Exactly 5.8%",
+"Approximately 70%",
+"Approximately 30%",
+"Nearly 95%"
+],
+"a": "Approximately 70%",
+"hint": "This high percentage is the reason why observation is often the preferred strategy for mild cases.",
+"rationale": "A large majority of pediatric ITP cases are acute and resolve on their own without the need for long-term intervention.",
+"qid": "itp-20"
+},
+{
+"q": "Which medication has an FDA Black Box Warning for thrombosis and renal failure?",
+"options": [
+"Romiplostim",
+"Anti-D Immunoglobulin",
+"Prednisolone",
+"Intravenous Immunoglobulin (IVIG)"
+],
+"a": "Intravenous Immunoglobulin (IVIG)",
+"hint": "This treatment is derived from pooled plasma and requires pre-medication and hydration.",
+"rationale": "Due to its high protein content and effects on blood viscosity, IVIG carries risks for clotting and kidney dysfunction.",
+"qid": "itp-21"
+},
+{
+"q": "In the context of ITP, what does the term 'Severe' specifically refer to?",
+"options": [
+"ITP that occurs secondary to HIV or SLE.",
+"Any case where the platelet count is below 10,000/μ L.",
+"Bleeding symptoms at presentation that mandate immediate treatment or the need for increased therapeutic doses.",
+"Cases that have lasted for more than 12 months without remission."
+],
+"a": "Bleeding symptoms at presentation that mandate immediate treatment or the need for increased therapeutic doses.",
+"hint": "Think about the clinical urgency and the intensity of the treatment required.",
+"rationale": "Severity is defined by clinical bleeding risk and the necessity of intervention, rather than just a very low platelet count.",
+"qid": "itp-22"
+},
+{
+"q": "Which of the following is a long-term adverse effect specifically associated with corticosteroid use in ITP?",
+"options": [
+"Growth delay and bone disease.",
+"Aseptic meningitis.",
+"Myelofibrosis.",
+"Acute hemolytic transfusion reaction."
+],
+"a": "Growth delay and bone disease.",
+"hint": "Identify the side effect that directly impacts a child's physical development over time.",
+"rationale": "Prolonged steroid use in children is avoided when possible due to its detrimental effects on skeletal development and growth.",
+"qid": "itp-23"
+},
+{
+"q": "For which patient population is Anti-D Immunoglobulin therapy restricted?",
+"options": [
+"Children under the age of 1 year.",
+"Patients who have already undergone a splenectomy.",
+"Patients with active Hepatitis B infection.",
+"Patients who are Rh(D)-positive."
+],
+"a": "Patients who are Rh(D)-positive.",
+"hint": "This therapy depends on the interaction between the drug and a specific protein on the surface of red blood cells.",
+"rationale": "The mechanism of Anti-D requires the presence of the D antigen on red blood cells to create the 'distraction' for the spleen.",
+"qid": "itp-24"
+},
+{
+"q": "Which of the following is an example of a T-cell mediated mechanism in the pathophysiology of ITP?",
+"options": [
+"Autoreactive cytotoxic T-cells directly binding to and destroying platelets.",
+"T-cells binding to the Fc receptor of macrophages to stimulate phagocytosis.",
+"Helper T-cells preventing the liver from filtering out old platelets.",
+"T-cells secreting antiplatelet antibodies into the plasma."
+],
+"a": "Autoreactive cytotoxic T-cells directly binding to and destroying platelets.",
+"hint": "Think about the direct 'killer' function of certain T-cell subsets.",
+"rationale": "While antibodies are a major factor, ITP also involves direct cellular destruction of platelets by T-cells.",
+"qid": "itp-25"
+},
+{
+"q": "What is the recommended maximum daily dose of Prednisone for a child being treated for ITP?",
+"options": [
+"75 mg/day",
+"400 mg/day",
+"1 g/day",
+"120 mg/day"
+],
+"a": "120 mg/day",
+"hint": "The limit is set to balance therapeutic effectiveness with the prevention of severe short-term side effects.",
+"rationale": "The recommended dosing is 4 mg/kg/day, capped at a maximum of 120 mg to limit toxicity.",
+"qid": "itp-26"
+},
+{
+"q": "In the management of ITP, which of the following should be avoided to minimize bleeding risk?",
+"options": [
+"Acetaminophen and light aerobic exercise.",
+"High-fiber diets and iron supplements.",
+"Contact sports and NSAIDs like ibuprofen.",
+"Hydration with normal saline."
+],
+"a": "Contact sports and NSAIDs like ibuprofen.",
+"hint": "Consider activities that cause physical impact and drugs that affect blood clotting mechanisms.",
+"rationale": "Physical trauma and medications that interfere with the remaining platelet function can significantly increase the risk of hemorrhage.",
+"qid": "itp-27"
+}
+]
 }
 ];
 
@@ -16129,15 +16830,15 @@ function recordAnswer(card, correct){
 // Themed bundles: a quiz across a group of related topics.
 const BUNDLES=[
   {id:'infectious', name:'Infectious disease', topics:['measles','varicella','mumps','rubella','ebv']},
-  {id:'neonatology', name:'Neonatology', topics:['nrds','nec']},
-  {id:'gastro', name:'Gastroenterology', topics:['colitis','crohns','celiac','eoe']},
+  {id:'neonatology', name:'Neonatology', topics:['nrds','nec','neonatalexam']},
+  {id:'gastro', name:'Gastroenterology', topics:['colitis','crohns','celiac','eoe','foodallergy']},
   {id:'respiratory', name:'Respiratory Diseases', topics:['asthma','bronchiolitis','pneumonia']},
   {id:'rheumatic', name:'Rheumatic Diseases', topics:['rheumaticfever','kawasaki','lupus','jia','igav','aps']},
   {id:'genetic', name:'Genetic Syndromes', topics:['klinefelter','turner','trisomy','praderwilli']},
   {id:'endocrine', name:'Endocrinology', topics:['hypothyroidism','cah','thyroidnodules','hashimotos','diabetes']},
   {id:'nephrology', name:'Nephrology', topics:['uti','psgn','nephrotic']},
-  {id:'hematology', name:'Hematology', topics:['anemia','anemiaddx','thalassemia','fhlh']},
-  {id:'immunology', name:'Immunology', topics:['immunodef','foodallergy']},
+  {id:'hematology', name:'Hematology', topics:['anemia','anemiaddx','thalassemia','fhlh','itp']},
+  {id:'immunology', name:'Immunology', topics:['immunodef']},
   {id:'oncology', name:'Oncology', topics:['leukemia','aml','neuroblastoma','nephroblastoma']},
   {id:'neurology', name:'Neurology', topics:['meningitis','encephalitis','seizure']},
   {id:'cardiology', name:'Cardiology', topics:['fetalcirc','chd']},
@@ -16518,7 +17219,7 @@ function audioInit(){
   Audio.master.gain.value = 0.5;
   Audio.master.connect(Audio.ctx.destination);
   // separate buses so each layer has its own level
-  Audio.beepBus = Audio.ctx.createGain();  Audio.beepBus.gain.value = 1.0;
+  Audio.beepBus = Audio.ctx.createGain();  Audio.beepBus.gain.value = 0.6;
   Audio.musicBus = Audio.ctx.createGain(); Audio.musicBus.gain.value = 0.9;
   Audio.beepBus.connect(Audio.master);
   Audio.musicBus.connect(Audio.master);
@@ -16612,25 +17313,35 @@ function stopMusicLoop(){
 function beep(freq, dur, vol){ tone(freq, dur, vol, 'sine', Audio.beepBus, 0.006); }
 function thud(freq, dur, vol){ tone(freq, dur, vol, 'triangle', Audio.beepBus, 0.002); }
 
-// sustained flatline tone (continuous asystole beep)
+// brief, soft flatline tone — plays for a couple of seconds then fades out
+// (no longer a continuous sustained beep)
 function startFlatline(){
   stopBeatLoop();
   if(!Audio.ctx || Audio.flatOsc) return;
   const t=Audio.ctx.currentTime;
+  const DUR=1.6;                       // seconds the flatline sounds (was 2.4)
   Audio.flatOsc = Audio.ctx.createOscillator();
   Audio.flatGain = Audio.ctx.createGain();
   Audio.flatOsc.type='sine';
   Audio.flatOsc.frequency.value=880;
+  // gentle rise, hold quietly, then fade to silence
   Audio.flatGain.gain.setValueAtTime(0, t);
-  Audio.flatGain.gain.linearRampToValueAtTime(0.28, t+0.08);
+  Audio.flatGain.gain.linearRampToValueAtTime(0.05, t+0.12);   // weaker peak (was 0.12, then 0.28)
+  Audio.flatGain.gain.setValueAtTime(0.05, t+DUR-0.5);
+  Audio.flatGain.gain.linearRampToValueAtTime(0.0001, t+DUR);  // fade out
   Audio.flatOsc.connect(Audio.flatGain);
   Audio.flatGain.connect(Audio.beepBus);
   Audio.flatOsc.start(t);
+  Audio.flatOsc.stop(t+DUR+0.05);
+  // clean up the references once it finishes on its own
+  Audio.flatOsc.onended=()=>{ Audio.flatOsc=null; Audio.flatGain=null; };
 }
 function stopFlatline(){
   if(Audio.flatOsc){
     try{
       const t=Audio.ctx.currentTime;
+      Audio.flatGain.gain.cancelScheduledValues(t);
+      Audio.flatGain.gain.setValueAtTime(Audio.flatGain.gain.value, t);
       Audio.flatGain.gain.linearRampToValueAtTime(0, t+0.1);
       Audio.flatOsc.stop(t+0.12);
     }catch(e){}
@@ -16822,7 +17533,9 @@ function render(){
   document.getElementById('vProg').textContent=(idx+1)+'/'+deck.length;
   document.getElementById('clue').classList.remove('show');
   document.getElementById('rationale').classList.remove('show','ok','no');
-  document.getElementById('next').classList.remove('show');
+  const nxb=document.getElementById('next');
+  nxb.classList.remove('show','fatal');
+  nxb.onclick=nextQ;   // normal behavior; the third-strike path overrides temporarily
   document.getElementById('tk5050').disabled = used5050;
   document.getElementById('tkClue').disabled = usedClue;
 
@@ -16875,7 +17588,15 @@ function choose(btn,card){
       pulseBpm(false);
       document.getElementById('ratLabel').textContent='Not quite — why';
       rat.classList.add('show','no');
-      if(strikes>=3){ setTimeout(()=>endGame('flatline'),900); return; }
+      if(strikes>=3){
+        // third strike: don't jump straight to the flatline — let the player
+        // review the correct answer and rationale, then continue on their own.
+        const nx=document.getElementById('next');
+        nx.textContent='Continue →';
+        nx.classList.add('show','fatal');
+        nx.onclick=()=>{ nx.onclick=null; nx.classList.remove('fatal'); endGame('flatline'); };
+        return;
+      }
     }
   }
   const isLast = idx>=deck.length-1;
@@ -16968,7 +17689,7 @@ function endGame(outcome){
       ? 'Asystole again at case '+(idx+1)+'. You answered '+score+' correctly. One shock was already used — time of death called.'
       : 'The patient arrested at case '+(idx+1)+'. You answered '+score+' correctly before the third strike. There is one shock left.';
     reviveBtn.classList.toggle('hide', revived);   // one-shot revive
-    if(Audio.beepOn) startFlatline();              // sustained flatline tone
+    if(Audio.beepOn) startFlatline();              // brief, quiet flatline tone (~1.6s)
   }else if(outcome==='quit'){
     audioStop();
     endEcg.classList.add('hide');
