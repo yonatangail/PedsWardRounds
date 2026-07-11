@@ -457,7 +457,7 @@
       </button>
       <button class="topic-mode" onclick="goBundleSelect()">
         <span class="tm-title">Bundles</span>
-        <span class="tm-sub">Themed sets — Infectious, GI, Respiratory, Rheumatic, Endocrine, Nephrology, Hematology, Oncology & more</span>
+        <span class="tm-sub">Themed sets — Infectious, GI, Respiratory, Rheumatic, Endocrine, Hematology, Oncology, Neurology, Cardiology & more</span>
       </button>
       <button class="topic-mode" onclick="goTopicSelect()">
         <span class="tm-title">Choose a topic</span>
@@ -14261,6 +14261,1771 @@ const TOPICS = [
 "qid": "nephroblastoma-26"
 }
 ]
+},
+{
+"id": "meningitis",
+"name": "Meningitis",
+"short": "Meningitis",
+"cards": [
+{
+"q": "Which of the following pathogens is uniquely associated with neonates (under 1 month) due to transmission through the birth canal?",
+"options": [
+"Streptococcus agalactiae",
+"Neisseria meningitidis",
+"Staphylococcus epidermidis",
+"Haemophilus influenzae"
+],
+"a": "Streptococcus agalactiae",
+"hint": "Consider the pathogen often referred to as Group B Streptococcus.",
+"rationale": "Commonly known as Group B Streptococcus, this pathogen is frequently found in the maternal vaginal flora and is a leading cause of neonatal meningitis.",
+"qid": "meningitis-01"
+},
+{
+"q": "A patient with sickle cell disease is specifically at a higher risk for meningitis caused by which type of bacteria?",
+"options": [
+"Coagulase-negative staphylococci",
+"Anaerobic bacteria",
+"Encapsulated bacteria",
+"Gram-negative bacilli"
+],
+"a": "Encapsulated bacteria",
+"hint": "Think about the structural characteristic shared by S. pneumoniae and N. meningitidis.",
+"rationale": "The functional asplenia associated with sickle cell disease impairs the body's ability to clear encapsulated organisms like S. pneumonia and N. meningitidis.",
+"qid": "meningitis-02"
+},
+{
+"q": "What is the defining characteristic of the rash seen in meningococcal sepsis?",
+"options": [
+"It does not blanch upon pressure",
+"It fades quickly when compressed",
+"It is localized strictly to the trunk",
+"It is a vesicular eruption"
+],
+"a": "It does not blanch upon pressure",
+"hint": "Recall the 'Glass Tumbler sign' mentioned in the text.",
+"rationale": "The petechial or purpuric nature of the rash indicates hemorrhage under the skin, which remains visible during the 'glass tumbler' test.",
+"qid": "meningitis-03"
+},
+{
+"q": "In infants, which clinical sign often replaces the classic nuchal rigidity seen in older children?",
+"options": [
+"Hyperreflexia",
+"Rigid paralysis",
+"Hypotonia",
+"Kernig's sign"
+],
+"a": "Hypotonia",
+"hint": "Look for a term describing decreased muscle tone.",
+"rationale": "Infants often lack classical meningeal signs and instead present with poor muscle tone and non-specific symptoms.",
+"qid": "meningitis-04"
+},
+{
+"q": "Which complication is characterized by acute adrenal gland failure due to hemorrhage during meningococcal meningitis?",
+"options": [
+"Syndrome of Inappropriate Antidiuretic Hormone (SIADH)",
+"Brudzinski's Sign",
+"Waterhouse-Friderichsen Syndrome",
+"Central Diabetes Insipidus"
+],
+"a": "Waterhouse-Friderichsen Syndrome",
+"hint": "This syndrome is associated with adrenal necrosis and septic shock.",
+"rationale": "This is a lethal complication of N. meningitidis involving adrenal necrosis, leading to rapid septic shock and DIC.",
+"qid": "meningitis-05"
+},
+{
+"q": "What is the primary reason to delay a lumbar puncture (LP) and perform a CT scan first?",
+"options": [
+"Signs of raised intracranial pressure",
+"Previous history of URI",
+"Suspected bacterial etiology",
+"The presence of a high fever"
+],
+"a": "Signs of raised intracranial pressure",
+"hint": "Consider the dangers of shifts in pressure within the skull.",
+"rationale": "Performing an LP in the presence of high ICP can lead to brain herniation; signs like anisocoria or a low GCS necessitate imaging first.",
+"qid": "meningitis-06"
+},
+{
+"q": "Which CSF finding is typical of acute bacterial meningitis?",
+"options": [
+"Glucose levels below 40 mg/dL",
+"Predominance of lymphocytes",
+"Clear and colorless appearance",
+"Opening pressure of 5 cmH₂O"
+],
+"a": "Glucose levels below 40 mg/dL",
+"hint": "Reflect on how bacteria affect the fuel source (sugar) in the fluid.",
+"rationale": "Bacteria consume glucose in the CSF, leading to characteristically low levels compared to serum.",
+"qid": "meningitis-07"
+},
+{
+"q": "What does the term 'decapitated meningitis' refer to in the source material?",
+"options": [
+"A severe form of meningitis resulting in brain death",
+"Infection caused specifically by S. pneumoniae",
+"The rapid progression of symptoms within 24 hours",
+"Meningitis where clinical signs and cultures are masked by prior antibiotic use"
+],
+"a": "Meningitis where clinical signs and cultures are masked by prior antibiotic use",
+"hint": "Consider the impact of early, non-specific antibiotic administration.",
+"rationale": "Prior oral antibiotics can suppress bacterial growth and symptoms, leading to negative cultures despite an active infection.",
+"qid": "meningitis-08"
+},
+{
+"q": "Which medication should be administered just prior to or concurrently with the first dose of antibiotics in pediatric bacterial meningitis?",
+"options": [
+"Benzodiazepines",
+"Rifampicin",
+"Gentamicin",
+"Dexamethasone"
+],
+"a": "Dexamethasone",
+"hint": "Identify the corticosteroid used to dampen the inflammatory response.",
+"rationale": "Corticosteroids help reduce the inflammatory response triggered by bacterial lysis, which helps prevent hearing loss.",
+"qid": "meningitis-09"
+},
+{
+"q": "In a 2-month-old infant, which antibiotic combination is recommended for empirical treatment?",
+"options": [
+"Ampicillin and Cefotaxime",
+"Penicillin G only",
+"Ceftriaxone monotherapy",
+"Ciprofloxacin and Vancomycin"
+],
+"a": "Ampicillin and Cefotaxime",
+"hint": "Recall the specific antibiotic needed to cover Listeria monocytogenes.",
+"rationale": "This combination ensures coverage against Listeria, E. coli, and Group B Streptococcus, which are prevalent in infants under 3 months.",
+"qid": "meningitis-10"
+},
+{
+"q": "What is the most frequent long-term neurological sequela observed in children recovering from S. pneumoniae meningitis?",
+"options": [
+"Visual impairment",
+"Epilepsy",
+"Adrenal failure",
+"Rhinitis"
+],
+"a": "Epilepsy",
+"hint": "Identify the condition characterized by recurrent, unprovoked seizures.",
+"rationale": "According to the source, epilepsy is the most frequent long-term sequela in survivors of pneumococcal meningitis.",
+"qid": "meningitis-11"
+},
+{
+"q": "How long must a patient with bacterial meningitis be placed on droplet precautions after starting antibiotics?",
+"options": [
+"24 hours",
+"7 days",
+"48 hours",
+"Until the fever resolves"
+],
+"a": "24 hours",
+"hint": "Consider the standard timeframe for becoming non-infectious after starting bactericidal agents.",
+"rationale": "Droplet precautions are necessary for at least 24 hours following the initiation of appropriate antibiotic therapy to prevent transmission.",
+"qid": "meningitis-12"
+},
+{
+"q": "Which sign is described as involuntary flexion of the legs when the neck is flexed?",
+"options": [
+"Kernig's sign",
+"Cranial nerve VI palsy",
+"Glass Tumbler sign",
+"Brudzinski's sign"
+],
+"a": "Brudzinski's sign",
+"hint": "This sign focuses on the relationship between neck flexion and the lower extremities.",
+"rationale": "Brudzinski's sign is a classic clinical indicator of meningeal irritation.",
+"qid": "meningitis-13"
+},
+{
+"q": "Why is S. pneumoniae meningitis associated with more frequent and severe complications compared to other types?",
+"options": [
+"It produces a thicker exudate and triggers aggressive immunological activation",
+"It only affects patients with basilar skull fractures",
+"It is primarily found in neonates with poor immune systems",
+"It is resistant to all cephalosporins"
+],
+"a": "It produces a thicker exudate and triggers aggressive immunological activation",
+"hint": "Think about the physical characteristics of the infection and the body's inflammatory response.",
+"rationale": "The source material specifies that the thicker exudate and strong immune response lead to higher rates of sequelae like stroke and hearing loss.",
+"qid": "meningitis-14"
+},
+{
+"q": "A patient presents with anisocoria and a GCS of 6. What is the immediate priority?",
+"options": [
+"Administer the Hib vaccine",
+"Start empirical antibiotics and draw blood cultures",
+"Perform a lumbar puncture immediately",
+"Wait for CT scan results before starting any treatment"
+],
+"a": "Start empirical antibiotics and draw blood cultures",
+"hint": "Time is of the essence in treatment even if definitive diagnosis via LP is delayed.",
+"rationale": "In cases where LP is contraindicated due to signs of high ICP (anisocoria, low GCS), antibiotics must not be delayed.",
+"qid": "meningitis-15"
+},
+{
+"q": "Which CSF protein level is indicative of bacterial meningitis based on the provided text?",
+"options": [
+"< 40 mg/dL",
+"> 100 mg/dL",
+"45 mg/dL",
+"10 mg/dL"
+],
+"a": "> 100 mg/dL",
+"hint": "Recall the specific threshold for 'elevated protein' mentioned in the CSF findings section.",
+"rationale": "Bacterial meningitis typically presents with significantly elevated protein levels, often exceeding 100 mg/dL.",
+"qid": "meningitis-16"
+},
+{
+"q": "What is the typical opening pressure range in bacterial meningitis?",
+"options": [
+"5 to 15 cmH₂O",
+"70 to 100 cmH₂O",
+"18 to 50 cmH₂O",
+"0 to 10 cmH₂O"
+],
+"a": "18 to 50 cmH₂O",
+"hint": "Identify the range representing a 'high opening pressure'.",
+"rationale": "Inflammation and edema in the subarachnoid space lead to high opening pressures during lumbar puncture.",
+"qid": "meningitis-17"
+},
+{
+"q": "Which pathogen is a common risk for children with CSF shunts?",
+"options": [
+"Neisseria meningitidis",
+"Listeria monocytogenes",
+"Escherichia coli",
+"Staphylococcus aureus"
+],
+"a": "Staphylococcus aureus",
+"hint": "Think of a common skin-resident bacterium that often colonizes medical devices.",
+"rationale": "Patients with shunts or recent neurosurgery are specifically at risk for staphylococcal species.",
+"qid": "meningitis-18"
+},
+{
+"q": "True or False: Immunocompromised patients always display classical meningeal signs such as nuchal rigidity.",
+"options": [
+"False",
+"True"
+],
+"a": "False",
+"hint": "Consider how a weakened immune system affects the body's inflammatory markers and symptoms.",
+"rationale": "Immunocompromised patients frequently fail to mount a proper inflammatory response, which is required to display meningeal signs.",
+"qid": "meningitis-19"
+},
+{
+"q": "Which test is described as the definitive diagnostic tool for bacterial meningitis?",
+"options": [
+"Blood Culture",
+"Lumbar Puncture (LP)",
+"Skin Biopsy",
+"CT Scan"
+],
+"a": "Lumbar Puncture (LP)",
+"hint": "This procedure involves collecting cerebrospinal fluid for analysis.",
+"rationale": "Analyzing the CSF obtained via LP is the gold standard for confirming meningitis and identifying the pathogen.",
+"qid": "meningitis-20"
+},
+{
+"q": "Post-exposure prophylaxis for close contacts of a meningitis patient should include which of the following?",
+"options": [
+"PCV vaccine",
+"Rifampicin",
+"Ampicillin",
+"Dexamethasone"
+],
+"a": "Rifampicin",
+"hint": "Identify one of the three prophylactic antibiotics mentioned in the prevention section.",
+"rationale": "Rifampicin, along with Ciprofloxacin or Ceftriaxone, is recommended for preventing secondary cases in close contacts.",
+"qid": "meningitis-21"
+},
+{
+"q": "What is the characteristic appearance of N. meningitidis on a Gram stain?",
+"options": [
+"Gram-negative bacillus",
+"Gram-negative diplococcus",
+"Gram-positive cocci in chains",
+"Gram-positive rod"
+],
+"a": "Gram-negative diplococcus",
+"hint": "Focus on the Gram stain reaction and the shape/pairing of the bacteria.",
+"rationale": "The source identifies N. meningitidis as a gram-negative diplococcus.",
+"qid": "meningitis-22"
+},
+{
+"q": "The Hib vaccine protects against which pathogen?",
+"options": [
+"Herpes simplex virus",
+"Haemophilus influenzae type b",
+"Hepatitis B virus",
+"Helicobacter pylori"
+],
+"a": "Haemophilus influenzae type b",
+"hint": "The name of the vaccine is an abbreviation of the bacterium it targets.",
+"rationale": "The widespread use of the Hib vaccine has significantly reduced the incidence of meningitis caused by this specific bacteria.",
+"qid": "meningitis-23"
+},
+{
+"q": "Which condition involves a bulging, pulsating fontanel in infants?",
+"options": [
+"Basilar skull fracture",
+"Dehydration",
+"Acute bacterial meningitis",
+"Normal developmental growth"
+],
+"a": "Acute bacterial meningitis",
+"hint": "This sign is a result of increased pressure within the infant's skull.",
+"rationale": "Increased intracranial pressure from the infection causes the fontanel (the soft spot on an infant's head) to bulge and pulsate.",
+"qid": "meningitis-24"
+},
+{
+"q": "What is the typical percentage of neutrophils in the CSF of a patient with bacterial meningitis?",
+"options": [
+"0%",
+"< 10%",
+"> 80%",
+"50%"
+],
+"a": "> 80%",
+"hint": "Think of the percentage that defines 'marked neutrophilic pleocytosis'.",
+"rationale": "A marked neutrophilic pleocytosis (specifically > 80%) is a hallmark of bacterial infection in the CSF.",
+"qid": "meningitis-25"
+},
+{
+"q": "Which complication involves the formation of a localized collection of pus within the brain tissue?",
+"options": [
+"Cerebral abscess",
+"Status epilepticus",
+"Arterial stroke",
+"Subdural empyema"
+],
+"a": "Cerebral abscess",
+"hint": "The term for a localized infection 'nest' or pocket of pus.",
+"rationale": "An abscess is a focal infection and a known acute complication of bacterial meningitis.",
+"qid": "meningitis-26"
+}
+]
+},
+{
+"id": "encephalitis",
+"name": "Encephalitis",
+"short": "Encephalitis",
+"cards": [
+{
+"q": "Which epidemiological trend is specifically mentioned as a result of climate change and globalization in the context of central nervous system infections?",
+"options": [
+"The stabilization of enterovirus strains across the European continent.",
+"The total eradication of poliovirus in temperate climates.",
+"A shift in bacterial meningitis peaks from winter to summer.",
+"The appearance of Japanese encephalitis virus in Italy."
+],
+"a": "The appearance of Japanese encephalitis virus in Italy.",
+"hint": "Consider the specific geographic example provided regarding a virus typically associated with Asia.",
+"rationale": "Changing environmental factors and global movement allow viruses to establish themselves in previously non-endemic regions.",
+"qid": "encephalitis-01"
+},
+{
+"q": "In infants under 3 months of age, what percentage of viral meningitis cases are attributed to enteroviruses?",
+"options": [
+"Approximately 50%",
+"96%",
+"Up to 90%",
+"Between 10% and 25%"
+],
+"a": "Up to 90%",
+"hint": "The text highlights that this group is significantly more affected by this specific viral family than the general population.",
+"rationale": "Enteroviruses such as Coxsackie and Echoviruses are the predominant cause of aseptic meningitis in very young infants.",
+"qid": "encephalitis-02"
+},
+{
+"q": "How does the seasonal peak of viral meningitis typically differ from that of bacterial meningitis?",
+"options": [
+"Both types peak during the winter months due to lower immune resistance.",
+"Viral meningitis peaks in the summer, while bacterial peaks in the winter.",
+"Viral meningitis peaks in the winter, while bacterial peaks in the summer.",
+"Both types peak during the summer due to increased human interaction."
+],
+"a": "Viral meningitis peaks in the summer, while bacterial peaks in the winter.",
+"hint": "Think about the time of year when enteroviruses, the most common cause, are most active.",
+"rationale": "Environmental conditions in the summer favor the spread of common viral causes like enteroviruses.",
+"qid": "encephalitis-03"
+},
+{
+"q": "Which mechanism of central nervous system (CNS) entry is utilized by the rabies and polio viruses?",
+"options": [
+"Retrograde transport via peripheral nerves.",
+"Hematogenous dissemination through the choroid plexus.",
+"Passive diffusion across the blood-brain barrier during high fever.",
+"Direct infection of the meningeal endothelial cells."
+],
+"a": "Retrograde transport via peripheral nerves.",
+"hint": "Consider an alternative to the circulatory system that involves the body's electrical signaling pathways.",
+"rationale": "These specific viruses bypass traditional blood-borne routes by moving along the axons of nerves to reach the brain.",
+"qid": "encephalitis-04"
+},
+{
+"q": "A lumbar puncture in a patient with suspected viral meningitis initially shows a presence of neutrophils. What is the expected progression of the white blood cell count in the CSF?",
+"options": [
+"A rapid shift to lympho-monocytosis.",
+"A complete disappearance of all white blood cells within 12 hours.",
+"A sustained increase in the neutrophil count over several days.",
+"The emergence of high levels of eosinophils."
+],
+"a": "A rapid shift to lympho-monocytosis.",
+"hint": "Look for a term that describes a shift toward lymphocytes and monocytes.",
+"rationale": "While neutrophils appear very early, the immune response in viral infections quickly transitions to mononuclear cells.",
+"qid": "encephalitis-05"
+},
+{
+"q": "Which finding in the cerebrospinal fluid (CSF) would most likely help distinguish viral meningitis from bacterial meningitis?",
+"options": [
+"The total absence of any white blood cells.",
+"Severely low glucose levels and high protein content.",
+"Normal glucose levels and little to no protein elevation.",
+"High pressure upon opening during the lumbar puncture."
+],
+"a": "Normal glucose levels and little to no protein elevation.",
+"hint": "Compare the metabolic activity and structural impact of bacteria versus viruses in the CSF.",
+"rationale": "Bacterial meningitis typically consumes glucose and causes significant protein leakage, whereas viral forms usually do not.",
+"qid": "encephalitis-06"
+},
+{
+"q": "How is viral encephalitis clinically differentiated from viral meningitis according to the source material?",
+"options": [
+"The presence of meningism and a normal neurological exam.",
+"The presence of encephalopathy and focal neurological signs.",
+"The presence of a high fever and headache without other signs.",
+"The absence of any inflammatory cells in the CSF."
+],
+"a": "The presence of encephalopathy and focal neurological signs.",
+"hint": "Focus on the symptoms that indicate the brain tissue itself (parenchyma) is being affected.",
+"rationale": "Encephalitis involves infection of the brain parenchyma, leading to altered consciousness and specific motor or sensory deficits.",
+"qid": "encephalitis-07"
+},
+{
+"q": "What is the primary genetic risk factor identified for recurrent episodes of Herpes Simplex Virus (HSV) encephalitis?",
+"options": [
+"A TLR3-interferon immune response deficiency.",
+"A deficiency in the production of IgG antibodies.",
+"An overexpression of the MHC class II complex.",
+"A mutation in the APOE-4 allele."
+],
+"a": "A TLR3-interferon immune response deficiency.",
+"hint": "This deficiency involves a specific Toll-like receptor and a critical signaling protein for antiviral defense.",
+"rationale": "This specific defect impairs the body's ability to mount an effective antiviral response, particularly against HSV in the CNS.",
+"qid": "encephalitis-08"
+},
+{
+"q": "In the diagnosis of HSV encephalitis, why is localization typically seen in the temporal lobe and limbic structures?",
+"options": [
+"The temporal lobe has the highest concentration of HSV-1 receptors.",
+"The high metabolic rate of the limbic system attracts viral replication.",
+"The virus enters via retrograde transport along the olfactory and trigeminal nerves.",
+"The blood-brain barrier is naturally thinner in these specific areas."
+],
+"a": "The virus enters via retrograde transport along the olfactory and trigeminal nerves.",
+"hint": "The route of entry into the CNS determines the initial site of infection.",
+"rationale": "These nerves provide a direct pathway from the periphery to the specific temporal and limbic regions of the brain.",
+"qid": "encephalitis-09"
+},
+{
+"q": "Which imaging modality is noted for being highly sensitive in the first 24 hours of HSV encephalitis?",
+"options": [
+"Contrast-enhanced CT scan.",
+"Transfontanellar ultrasound.",
+"Diffusion-weighted MRI (DW-MRI).",
+"Functional PET imaging."
+],
+"a": "Diffusion-weighted MRI (DW-MRI).",
+"hint": "Consider a specific type of magnetic resonance imaging that measures the movement of water molecules.",
+"rationale": "DW-MRI can detect asymmetrical changes in the temporal lobes early in the course of the infection.",
+"qid": "encephalitis-10"
+},
+{
+"q": "What is the recommended duration for high-dose intravenous Acyclovir treatment in patients with HSV encephalitis?",
+"options": [
+"7 to 10 days.",
+"Until the patient is afebrile for 48 hours.",
+"14 days.",
+"21 days."
+],
+"a": "21 days.",
+"hint": "This duration is exactly three weeks.",
+"rationale": "This prolonged course is necessary to ensure the virus is adequately controlled and to minimize the risk of relapse.",
+"qid": "encephalitis-11"
+},
+{
+"q": "Why is a repeat lumbar puncture performed after the initial 21-day treatment of HSV encephalitis?",
+"options": [
+"To relieve persistent intracranial pressure caused by the virus.",
+"To check for the development of secondary bacterial meningitis.",
+"To administer intrathecal Acyclovir directly into the CSF.",
+"To ensure the virus is completely cleared and prevent reactivation."
+],
+"a": "To ensure the virus is completely cleared and prevent reactivation.",
+"hint": "The procedure is used as a safety check before concluding the intensive antiviral regimen.",
+"rationale": "Confirming a negative PCR is critical before stopping antiviral therapy in a high-risk infection.",
+"qid": "encephalitis-12"
+},
+{
+"q": "What percentage of survivors of HSV encephalitis suffer from severe long-term sequelae?",
+"options": [
+"30-75%",
+"Less than 10%",
+"6-8%",
+"Exactly 50%"
+],
+"a": "30-75%",
+"hint": "This range reflects that more than a quarter and potentially up to three-quarters of survivors are affected.",
+"rationale": "Despite treatment, the neurological damage caused by HSV-1 in the brain is often permanent and extensive.",
+"qid": "encephalitis-13"
+},
+{
+"q": "What is a rare but potentially fatal complication of VZV cerebellitis described in the material?",
+"options": [
+"Systemic liver failure following varicella reactivation.",
+"Posterior fossa herniation due to rapid cerebellar edema.",
+"Irreversible blindness due to optic nerve atrophy.",
+"Chronic autoimmune polyneuropathy."
+],
+"a": "Posterior fossa herniation due to rapid cerebellar edema.",
+"hint": "This involves high pressure in the back of the skull that can force brain tissue through the foramen magnum.",
+"rationale": "Swelling in the confined space of the posterior fossa can compress the brainstem, requiring urgent neurosurgery.",
+"qid": "encephalitis-14"
+},
+{
+"q": "In approximately what percentage of encephalitis cases does the specific etiology remain unknown or eventually identified as autoimmune?",
+"options": [
+"10-25%",
+"90%",
+"5%",
+"50%"
+],
+"a": "50%",
+"hint": "The answer represents half of the total cases.",
+"rationale": "Despite advanced diagnostic testing, half of all encephalitis cases lack a confirmed viral cause or are non-infectious.",
+"qid": "encephalitis-15"
+},
+{
+"q": "Which characteristic of VZV cerebellitis distinguishes the 'post-varicella immune reaction' form from the direct viral involvement form?",
+"options": [
+"The post-varicella form is usually benign and self-limiting.",
+"The immune reaction form does not involve the cerebellum.",
+"The post-varicella form is always more severe than direct infection.",
+"Only the direct viral form causes seizures."
+],
+"a": "The post-varicella form is usually benign and self-limiting.",
+"hint": "One form typically resolves on its own without aggressive intervention.",
+"rationale": "In many cases, the cerebellar signs are a secondary immune response rather than a direct infection of the tissue.",
+"qid": "encephalitis-16"
+},
+{
+"q": "How frequent are typical muco-cutaneous herpetic lesions (e.g., cold sores) in patients with HSV encephalitis?",
+"options": [
+"Over 90%",
+"Roughly 50%",
+"Almost 0%, as it is a different virus strain.",
+"10-25%"
+],
+"a": "10-25%",
+"hint": "These external signs are surprisingly uncommon in the encephalitis presentation.",
+"rationale": "The absence of cold sores does not rule out HSV encephalitis, as only a minority of patients exhibit these external signs.",
+"qid": "encephalitis-17"
+},
+{
+"q": "What is the primary diagnostic tool used to definitively confirm the presence of a specific virus in the CSF?",
+"options": [
+"Gram staining.",
+"Viral culture on agar plates.",
+"Viral PCR.",
+"EEG slowing patterns."
+],
+"a": "Viral PCR.",
+"hint": "This method involves amplifying genetic material.",
+"rationale": "Polymerase Chain Reaction is highly sensitive and specific for detecting viral DNA or RNA in the cerebrospinal fluid.",
+"qid": "encephalitis-18"
+},
+{
+"q": "Which of the following is most indicative of encephalopathy in a clinical setting?",
+"options": [
+"Photophobia and phonophobia.",
+"Altered cognition and behavioral changes.",
+"The isolated presence of a stiff neck.",
+"High fever alone."
+],
+"a": "Altered cognition and behavioral changes.",
+"hint": "Think about symptoms that might lead someone to mistake the condition for a psychiatric illness.",
+"rationale": "Encephalopathy is characterized by global brain dysfunction, including confusion, memory loss, and personality shifts.",
+"qid": "encephalitis-19"
+},
+{
+"q": "What is the mortality rate associated with Herpes Simplex Virus encephalitis?",
+"options": [
+"Less than 1%",
+"Approximately 30%",
+"96%",
+"6-8%"
+],
+"a": "6-8%",
+"hint": "The mortality rate is in the single digits, according to the text.",
+"rationale": "This figure represents the current mortality rate, though morbidity (long-term sequelae) remains much higher.",
+"qid": "encephalitis-20"
+},
+{
+"q": "Which virus family includes Coxsackie and Echoviruses, the leading causes of viral meningitis?",
+"options": [
+"Herpesviruses.",
+"Arboviruses.",
+"Retroviruses.",
+"Enteroviruses."
+],
+"a": "Enteroviruses.",
+"hint": "These viruses are often spread via the fecal-oral route, hinted at by their group name.",
+"rationale": "This group of viruses is responsible for the majority of viral meningitis cases, especially in summer peaks.",
+"qid": "encephalitis-21"
+},
+{
+"q": "What finding on an EEG is commonly associated with HSV encephalitis?",
+"options": [
+"Unilateral temporal slowing or epileptic discharges.",
+"Generalized spike-and-wave activity.",
+"A completely normal EEG despite coma.",
+"Rapid beta-wave rhythms in the frontal lobe."
+],
+"a": "Unilateral temporal slowing or epileptic discharges.",
+"hint": "The electrical findings mirror the specific anatomical location of the infection.",
+"rationale": "Because the virus targets the temporal lobes, the electrical activity in those specific regions becomes disrupted.",
+"qid": "encephalitis-22"
+},
+{
+"q": "Which of the following is NOT listed as a potential long-term consequence for survivors of HSV encephalitis?",
+"options": [
+"Chronic liver cirrhosis.",
+"Visual loss.",
+"Motor deficits.",
+"Seizures."
+],
+"a": "Chronic liver cirrhosis.",
+"hint": "Identify the option that is a non-neurological condition.",
+"rationale": "The text lists neurological sequelae like motor deficits and developmental delay, but not systemic organ failure like cirrhosis.",
+"qid": "encephalitis-23"
+},
+{
+"q": "In the context of pathophysiology, what is the role of the choroid plexus in viral meningoencephalitis?",
+"options": [
+"It produces antibodies to neutralize enteroviruses.",
+"It acts as a reservoir for latent HSV-1 infections.",
+"It is the primary site of retrograde nerve transport.",
+"It serves as a site where viruses cross the blood-brain barrier."
+],
+"a": "It serves as a site where viruses cross the blood-brain barrier.",
+"hint": "Consider its function as a gateway between the blood and the CSF.",
+"rationale": "Viruses in the bloodstream use the choroid plexus as an entry point into the cerebrospinal fluid and CNS.",
+"qid": "encephalitis-24"
+},
+{
+"q": "Which of the following descriptions best fits the typical clinical presentation of viral meningitis?",
+"options": [
+"Severe behavioral disturbances and psychosis.",
+"Acute paralysis starting in the lower extremities.",
+"Complete absence of fever despite meningeal signs.",
+"Symptoms resembling bacterial meningitis but noticeably less severe."
+],
+"a": "Symptoms resembling bacterial meningitis but noticeably less severe.",
+"hint": "It is often called 'aseptic meningitis' and is usually self-limiting.",
+"rationale": "Patients experience fever and meningeal signs, but generally without the life-threatening severity or rapid progression of bacterial types.",
+"qid": "encephalitis-25"
+},
+{
+"q": "What distinguishes the primary infection phase from reactivation in the context of HSV-1 encephalitis?",
+"options": [
+"Primary infection only occurs in patients with TLR3 deficiency.",
+"Reactivation is limited to the olfactory nerves only.",
+"Encephalitis most frequently occurs due to reactivation of the virus.",
+"Primary infection is responsible for 90% of cases."
+],
+"a": "Encephalitis most frequently occurs due to reactivation of the virus.",
+"hint": "Think about whether the first exposure or a later flare-up of the dormant virus is more common.",
+"rationale": "Most adults have been previously exposed to HSV-1, and the brain infection usually triggers when the latent virus becomes active again.",
+"qid": "encephalitis-26"
+}
+]
+},
+{
+"id": "seizure",
+"name": "Seizures & Epilepsy",
+"short": "Seizures",
+"cards": [
+{
+"q": "A 10-month-old child presents with a first-time generalized seizure lasting 8 minutes during a viral illness. What is the estimated risk of recurrence for this patient?",
+"options": [
+"5%",
+"30%",
+"50%",
+"75%"
+],
+"a": "50%",
+"hint": "Consider how the child's age at the first event influences the statistical likelihood of future episodes.",
+"rationale": "For children under 12 months of age at the time of their first febrile seizure, the recurrence rate is significantly higher.",
+"qid": "seizure-01"
+},
+{
+"q": "Which of the following clinical features would definitively classify a febrile seizure as 'complex'?",
+"options": [
+"Occurrence within the first 12 hours of illness",
+"A focal onset to the seizure activity",
+"A core body temperature of 40°C",
+"A duration of 12 minutes"
+],
+"a": "A focal onset to the seizure activity",
+"hint": "Focus on the seizure's presentation pattern or localization rather than its timing during the illness.",
+"rationale": "Any seizure that begins in a specific part of the brain or body rather than being generalized from the start is classified as complex.",
+"qid": "seizure-02"
+},
+{
+"q": "During the emergency assessment of a child with an active seizure, what blood glucose level is used as the threshold to rule out hypoglycemia mimicking a seizure?",
+"options": [
+"< 80 mg/dL",
+"< 40 mg/dL",
+"< 60 mg/dL",
+"< 100 mg/dL"
+],
+"a": "< 60 mg/dL",
+"hint": "Recall the specific numerical value mentioned in the emergency management protocol for rapid blood testing.",
+"rationale": "This specific threshold is used in the ER to identify metabolic disturbances that can cause seizure-like activity.",
+"qid": "seizure-03"
+},
+{
+"q": "A 14-month-old child has two generalized seizures within a 24-hour period. How is this presentation classified?",
+"options": [
+"Febrile status epilepticus",
+"Epilepsy",
+"Complex febrile seizure",
+"Simple febrile seizure"
+],
+"a": "Complex febrile seizure",
+"hint": "Check the frequency requirements that distinguish the two primary categories of febrile seizures.",
+"rationale": "Any occurrence of more than one febrile seizure within a single 24-hour window meets the criteria for a complex classification.",
+"qid": "seizure-04"
+},
+{
+"q": "Which factor is NOT typically involved in the pathophysiology triggering a febrile seizure?",
+"options": [
+"Rapid changes in body temperature",
+"Individual seizure threshold",
+"Chronic structural brain lesions",
+"Circulating inflammatory cytokines"
+],
+"a": "Chronic structural brain lesions",
+"hint": "Distinguish between the acute triggers of the event and the permanent neurological conditions physicians must exclude.",
+"rationale": "Febrile seizures are triggered by systemic factors and individual thresholds, whereas structural lesions are underlying conditions to be ruled out.",
+"qid": "seizure-05"
+},
+{
+"q": "A physician is considering a lumbar puncture (LP) for a 15-month-old child after a seizure. Which scenario most strongly supports performing this procedure?",
+"options": [
+"The child was pre-treated with antibiotics by the parents",
+"The child is fully immunized against Hib",
+"The seizure lasted 10 minutes",
+"The child has a core temperature of 39.5°C"
+],
+"a": "The child was pre-treated with antibiotics by the parents",
+"hint": "Think about factors that might hide or 'mask' serious underlying infections like meningitis.",
+"rationale": "Antibiotics can mask the physical symptoms of meningitis, making an LP necessary to definitively rule out CNS infection.",
+"qid": "seizure-06"
+},
+{
+"q": "What is the primary reason why chronic anticonvulsants are not typically prescribed for children with recurrent simple febrile seizures?",
+"options": [
+"The seizures cause permanent brain damage anyway",
+"Side effects of the drugs outweigh the risks of the seizures",
+"Anticonvulsants are ineffective at preventing recurrence",
+"Recurrence only occurs in 2% of cases"
+],
+"a": "Side effects of the drugs outweigh the risks of the seizures",
+"hint": "Evaluate the risk-benefit ratio regarding the benign nature of the seizure versus the impact of the treatment.",
+"rationale": "Because simple febrile seizures are benign and do not cause brain damage, the toxicity of long-term medication is considered more harmful.",
+"qid": "seizure-07"
+},
+{
+"q": "Regarding long-term prognosis, what is the risk of developing epilepsy after experiencing simple febrile seizures?",
+"options": [
+"There is no increased risk compared to the general population",
+"The risk is increased if the child is under 12 months old",
+"The risk increases with every recurrent simple seizure",
+"There is a small risk specifically linked to Dravet syndrome"
+],
+"a": "There is no increased risk compared to the general population",
+"hint": "Recall the family education section concerning brain damage and the future development of seizure disorders.",
+"rationale": "Simple febrile seizures are benign events that do not elevate the baseline risk for developing epilepsy later in life.",
+"qid": "seizure-08"
+},
+{
+"q": "Which medication is identified as a first-line treatment to stop an active, prolonged febrile seizure in the emergency room?",
+"options": [
+"Paracetamol",
+"Haemophilus influenzae type b vaccine",
+"Ibuprofen",
+"Diazepam"
+],
+"a": "Diazepam",
+"hint": "Identify the specific class of anti-seizure drugs mentioned for emergency intervention.",
+"rationale": "Benzodiazepines like Diazepam are the standard intervention for aggressively stopping status epilepticus or active prolonged seizures.",
+"qid": "seizure-09"
+},
+{
+"q": "Following a complex febrile seizure, a child displays temporary weakness in their right arm. This is known as:",
+"options": [
+"Status epilepticus",
+"Cerebral palsy",
+"Meningismus",
+"Todd's paralysis"
+],
+"a": "Todd's paralysis",
+"hint": "Look for the specific medical term used to describe temporary neurologic consequences mentioned in the classification section.",
+"rationale": "Todd's paralysis is a focal neurological deficit that follows a seizure and is a hallmark 'post-ictal sign' of a complex seizure.",
+"qid": "seizure-10"
+},
+{
+"q": "A parent asks if giving Paracetamol every 4 hours will prevent their child from having another seizure. Based on the source material, what is the correct response?",
+"options": [
+"It only works if combined with chronic anticonvulsants",
+"Prophylactic antipyretics do not prevent the recurrence of febrile seizures",
+"Only Ibuprofen is effective for prevention, not Paracetamol",
+"Yes, maintaining a normal temperature prevents the trigger mechanism"
+],
+"a": "Prophylactic antipyretics do not prevent the recurrence of febrile seizures",
+"hint": "Focus on the effectiveness of fever-reducing medications in relation to the seizure's recurrence.",
+"rationale": "Research indicates that while antipyretics manage the fever, they do not change the likelihood of a seizure recurring.",
+"qid": "seizure-11"
+},
+{
+"q": "Under what condition should neuroimaging (CT/MRI) be strongly considered in a child with a febrile seizure?",
+"options": [
+"If it is the child's first simple febrile seizure",
+"If the child is younger than 12 months",
+"If the seizure is classified as complex",
+"If the child's fever is higher than 40°C"
+],
+"a": "If the seizure is classified as complex",
+"hint": "Differentiate between the diagnostic recommendations for simple versus complex classifications.",
+"rationale": "Complex seizures have a higher association with underlying issues, making imaging a recommended part of the diagnostic process.",
+"qid": "seizure-12"
+},
+{
+"q": "What is the recommended first-aid action for parents during a child's seizure?",
+"options": [
+"Place the child in a side-lying position",
+"Place a padded spoon in the child's mouth",
+"Administer oral Paracetamol immediately",
+"Restrain the child's limbs to prevent injury"
+],
+"a": "Place the child in a side-lying position",
+"hint": "Consider the safety and airway management steps provided for family education.",
+"rationale": "This position helps keep the airway clear and prevents aspiration during the event.",
+"qid": "seizure-13"
+},
+{
+"q": "Which age group is most commonly affected by febrile seizures?",
+"options": [
+"2 years to 10 years",
+"Birth to 18 months",
+"6 months to 5 years",
+"12 months to 3 years"
+],
+"a": "6 months to 5 years",
+"hint": "Identify the standard developmental window mentioned in the introduction of the source.",
+"rationale": "This age range defines the typical window where the developing brain is susceptible to fever-triggered seizures.",
+"qid": "seizure-14"
+},
+{
+"q": "Which of the following is a potential reason for a child to be at high risk for bacterial meningitis despite appearing to have a 'simple' febrile seizure?",
+"options": [
+"The child is over 18 months old",
+"Deficiency in Streptococcus pneumoniae immunizations",
+"The child has a family history of febrile seizures",
+"The seizure occurred during a viral illness"
+],
+"a": "Deficiency in Streptococcus pneumoniae immunizations",
+"hint": "Look for specific pathogens and immunization gaps mentioned in the Lumbar Puncture guidelines.",
+"rationale": "Children missing key immunizations are at higher risk for the infections that cause meningitis, requiring more cautious evaluation.",
+"qid": "seizure-15"
+},
+{
+"q": "The assessment of 'AVPU' in the ER is used to evaluate:",
+"options": [
+"Neurological status",
+"Respiratory effort",
+"Circulatory stability",
+"Glucose metabolism"
+],
+"a": "Neurological status",
+"hint": "Recall the section on immediate priorities when a child arrives at the emergency department.",
+"rationale": "AVPU is a rapid scale used to determine a patient's level of consciousness and neurological responsiveness.",
+"qid": "seizure-16"
+},
+{
+"q": "True or False: Simple febrile seizures are known to cause long-term impacts on a child's learning abilities.",
+"options": [
+"True",
+"False"
+],
+"a": "False",
+"hint": "Consider the prognosis and family education provided in the material regarding cognitive outcomes.",
+"rationale": "The source explicitly states that simple febrile seizures do not cause brain damage or impact learning abilities.",
+"qid": "seizure-17"
+},
+{
+"q": "Which of these is considered a 'metabolic disturbance' that must be ruled out before diagnosing a febrile seizure?",
+"options": [
+"Hypoglycemia",
+"Todd's paralysis",
+"Cerebral palsy",
+"Meningitis"
+],
+"a": "Hypoglycemia",
+"hint": "Look for the specific example of a chemical or nutrient imbalance provided in the differential diagnosis section.",
+"rationale": "Low blood sugar is a metabolic issue that can cause seizures and must be distinguished from fever-triggered events.",
+"qid": "seizure-18"
+},
+{
+"q": "A febrile seizure that evolves into continuous activity without recovery is known as:",
+"options": [
+"Dravet syndrome",
+"Generalized seizure",
+"Febrile status epilepticus",
+"Simple febrile seizure"
+],
+"a": "Febrile status epilepticus",
+"hint": "Review the classification of complex seizures and the interventions required to stop them.",
+"rationale": "This is the severe end of the complex febrile seizure spectrum where the seizure does not stop on its own.",
+"qid": "seizure-19"
+},
+{
+"q": "What is the primary diagnostic goal for a child presenting with a simple febrile seizure?",
+"options": [
+"Identify and treat the source of the fever",
+"Perform a CT scan to check for brain swelling",
+"Obtain an emergent EEG",
+"Initiate long-term anti-epileptic drug therapy"
+],
+"a": "Identify and treat the source of the fever",
+"hint": "Consider what the medical priority becomes once the seizure has naturally stopped and been classified as simple.",
+"rationale": "Since the seizure itself is benign and brief, the focus shifts to finding the underlying infection causing the fever.",
+"qid": "seizure-20"
+},
+{
+"q": "Which immunization deficiency is specifically mentioned as a reason to consider a lumbar puncture in an infant under 18 months?",
+"options": [
+"Influenza virus vaccine",
+"Haemophilus influenzae type b",
+"Hepatitis B",
+"Measles, Mumps, and Rubella (MMR)"
+],
+"a": "Haemophilus influenzae type b",
+"hint": "Look for the specific bacterial vaccines listed in the Lumbar Puncture section.",
+"rationale": "Hib is a major cause of bacterial meningitis in infants; a lack of this vaccine increases the clinical risk of CNS infection.",
+"qid": "seizure-21"
+},
+{
+"q": "How common are febrile seizures in the general childhood population?",
+"options": [
+"0.5% to 1%",
+"10% to 15%",
+"20%",
+"2% to 5%"
+],
+"a": "2% to 5%",
+"hint": "Check the introductory statistics provided at the beginning of the material.",
+"rationale": "This range represents the established prevalence of the disorder among children between 6 months and 5 years old.",
+"qid": "seizure-22"
+},
+{
+"q": "A seizure is classified as 'prolonged' and therefore 'complex' if it exceeds what duration?",
+"options": [
+"5 minutes",
+"15 minutes",
+"30 minutes",
+"10 minutes"
+],
+"a": "15 minutes",
+"hint": "Identify the time-based threshold used to differentiate between Simple and Complex types.",
+"rationale": "The 15-minute mark is the critical dividing line between simple and complex febrile seizure durations.",
+"qid": "seizure-23"
+},
+{
+"q": "What is the significance of 'neck stiffness' in a child who has just had a seizure?",
+"options": [
+"It suggests the child has Dravet syndrome",
+"It is a side effect of Ibuprofen administration",
+"It is a common post-ictal sign of a simple febrile seizure",
+"It is a meningeal sign that indicates the need for a lumbar puncture"
+],
+"a": "It is a meningeal sign that indicates the need for a lumbar puncture",
+"hint": "Relate this physical exam finding to the diagnostic testing section for infections.",
+"rationale": "Neck stiffness (nuchal rigidity) is a classic indicator of meningitis, necessitating an LP to rule out CNS infection.",
+"qid": "seizure-24"
+},
+{
+"q": "True or False: If a child is older than 12 months at the time of their first febrile seizure, the recurrence rate is higher than if they were younger.",
+"options": [
+"False",
+"True"
+],
+"a": "False",
+"hint": "Compare the recurrence statistics for infants versus older toddlers mentioned in the prognosis section.",
+"rationale": "The recurrence rate is actually lower (30%) for children older than 12 months compared to those under 12 months (50%).",
+"qid": "seizure-25"
+},
+{
+"q": "Which of the following describes the typical 'type' of a simple febrile seizure?",
+"options": [
+"Starts focal and becomes generalized",
+"Always a focal seizure",
+"Always a generalized seizure",
+"Absence seizure only"
+],
+"a": "Always a generalized seizure",
+"hint": "Check the classification section for the 'Type' requirement of a simple febrile seizure.",
+"rationale": "By definition, a simple febrile seizure involves the whole brain/body simultaneously rather than starting in one area.",
+"qid": "seizure-26"
+}
+]
+},
+{
+"id": "fetalcirc",
+"name": "Fetal & Neonatal Circulation",
+"short": "Fetal Circulation",
+"cards": [
+{
+"q": "Which component of the fetal circulatory system possesses the lowest vascular resistance, receiving approximately 40% of the cardiac output?",
+"options": [
+"The fetal lungs",
+"The ductus venosus",
+"The descending aorta",
+"The placenta"
+],
+"a": "The placenta",
+"hint": "Consider which organ acts as the primary site for gas exchange outside the fetal body.",
+"rationale": "The placenta is a low-resistance circuit designed to facilitate efficient nutrient and gas exchange with the maternal blood.",
+"qid": "fetalcirc-01"
+},
+{
+"q": "In the fetal heart, blood entering the right atrium from the inferior vena cava (IVC) primarily follows which path?",
+"options": [
+"Through the foramen ovale into the left atrium",
+"Into the right ventricle and out the pulmonary artery",
+"Back into the superior vena cava",
+"Through the ductus arteriosus into the aorta"
+],
+"a": "Through the foramen ovale into the left atrium",
+"hint": "Identify the anatomical opening between the two upper chambers of the fetal heart.",
+"rationale": "This right-to-left shunt allows oxygenated blood from the placenta to bypass the non-functional lungs and reach the systemic circulation.",
+"qid": "fetalcirc-02"
+},
+{
+"q": "What is the primary role of the ductus venosus in fetal circulation?",
+"options": [
+"Connecting the umbilical arteries to the internal iliac arteries",
+"Ensuring the lungs receive high-pressure oxygenated blood",
+"Bypassing the liver to deliver blood to the inferior vena cava",
+"Shunting blood from the pulmonary artery to the aorta"
+],
+"a": "Bypassing the liver to deliver blood to the inferior vena cava",
+"hint": "Think about the organ located between the umbilical vein and the heart.",
+"rationale": "The ductus venosus allows oxygen-rich blood from the umbilical vein to enter the central circulation more quickly by avoiding the hepatic capillary bed.",
+"qid": "fetalcirc-03"
+},
+{
+"q": "Fetal hemoglobin (HbF) facilitates oxygen transfer from the mother primarily because it has a higher affinity for oxygen. How does this appear on an oxygen-dissociation curve?",
+"options": [
+"A linear rather than sigmoidal shape",
+"A shift to the left compared to adult hemoglobin",
+"A shift to the right compared to adult hemoglobin",
+"A downward shift in the maximum oxygen capacity"
+],
+"a": "A shift to the left compared to adult hemoglobin",
+"hint": "A leftward movement on this graph generally indicates that the molecule holds onto its cargo more tightly.",
+"rationale": "A left shift on the curve represents a higher affinity for oxygen at any given partial pressure, facilitating uptake from the mother.",
+"qid": "fetalcirc-04"
+},
+{
+"q": "The 'Double Bohr Effect' optimizes oxygen transfer by which of the following mechanisms?",
+"options": [
+"Decreasing the hemoglobin concentration in maternal blood",
+"Increasing the PO₂ in the umbilical artery to exceed maternal levels",
+"The maternal curve shifting right while the fetal curve shifts left",
+"Maternal and fetal hemoglobin curves both shifting to the right"
+],
+"a": "The maternal curve shifting right while the fetal curve shifts left",
+"hint": "Consider how opposite shifts in binding affinity between two adjacent systems would maximize exchange.",
+"rationale": "This creates a larger gradient where the mother releases oxygen more easily while the fetus binds it more readily.",
+"qid": "fetalcirc-05"
+},
+{
+"q": "What is the typical range for oxygen tension (PO₂) in the umbilical vein?",
+"options": [
+"80-100 mmHg",
+"120-150 mmHg",
+"10-20 mmHg",
+"30-55 mmHg"
+],
+"a": "30-55 mmHg",
+"hint": "Recall that the fetus operates in a relatively low-oxygen environment compared to the newborn.",
+"rationale": "Despite being the most oxygenated blood in the fetal system, the umbilical vein PO₂ is much lower than adult arterial levels.",
+"qid": "fetalcirc-06"
+},
+{
+"q": "At birth, what is the immediate physiological consequence of clamping the umbilical cord?",
+"options": [
+"A decrease in left atrial pressure",
+"An immediate increase in systemic vascular resistance",
+"A sudden drop in systemic vascular resistance",
+"The opening of the ductus venosus"
+],
+"a": "An immediate increase in systemic vascular resistance",
+"hint": "Removing a large, low-resistance parallel circuit from a system will affect the total resistance the pump must overcome.",
+"rationale": "Removing the placenta, which received 40% of the cardiac output, forces the heart to pump against higher resistance in the remaining systemic circuit.",
+"qid": "fetalcirc-07"
+},
+{
+"q": "The functional closure of the foramen ovale is triggered by which pressure change?",
+"options": [
+"The total cessation of blood flow through the inferior vena cava",
+"A decrease in aortic pressure below pulmonary pressure",
+"Right atrial pressure becoming higher than left atrial pressure",
+"Left atrial pressure becoming higher than right atrial pressure"
+],
+"a": "Left atrial pressure becoming higher than right atrial pressure",
+"hint": "Think about how increased blood return from the lungs affects the chambers on the left side of the heart.",
+"rationale": "Increased blood return from the newly expanded lungs raises left-sided pressure, pushing the septum primum against the septum secundum.",
+"qid": "fetalcirc-08"
+},
+{
+"q": "Which of the following triggers the physiological constriction and eventual closure of the ductus arteriosus after birth?",
+"options": [
+"The release of prostaglandins from the newborn's lungs",
+"Increased blood flow from the umbilical vein",
+"Decreased arterial oxygen levels and increased systemic pressure",
+"Increased arterial oxygen saturation and decreased pulmonary pressure"
+],
+"a": "Increased arterial oxygen saturation and decreased pulmonary pressure",
+"hint": "Consider the two major environmental changes the newborn experiences: breathing air and losing the placental connection.",
+"rationale": "The rise in O₂ levels and the drop in PVR signal the ductus to constrict as it is no longer needed for right-to-left shunting.",
+"qid": "fetalcirc-09"
+},
+{
+"q": "Approximately what percentage of neonates experience difficulties during the transition to extrauterine life requiring resuscitation?",
+"options": [
+"50%",
+"1%",
+"25%",
+"10%"
+],
+"a": "10%",
+"hint": "The text mentions that the 'vast majority' transition smoothly, leaving a specific small decimal-based percentage.",
+"rationale": "While 90% transition smoothly, roughly 1 in 10 infants requires assistance with the transition.",
+"qid": "fetalcirc-10"
+},
+{
+"q": "Persistent Pulmonary Hypertension (PPHN) is characterized by which of the following?",
+"options": [
+"Premature closure of the foramen ovale in utero",
+"A failure of systemic vascular resistance to increase",
+"A failure of pulmonary vascular resistance to drop after birth",
+"Excessive surfactant production in the alveoli"
+],
+"a": "A failure of pulmonary vascular resistance to drop after birth",
+"hint": "The name of the condition indicates that the resistance in the lung's blood vessels remains abnormally high.",
+"rationale": "If PVR remains high, blood continues to shunt right-to-left, bypassing the lungs and causing severe hypoxemia.",
+"qid": "fetalcirc-11"
+},
+{
+"q": "In cases of severe coarctation of the aorta or hypoplastic left heart syndrome, why is the closure of the ductus arteriosus life-threatening?",
+"options": [
+"It triggers an immediate increase in fetal hemoglobin production",
+"It prevents the lungs from expanding during the first breath",
+"It cuts off the only pathway for systemic or pulmonary circulation",
+"It causes a massive drop in pulmonary blood flow"
+],
+"a": "It cuts off the only pathway for systemic or pulmonary circulation",
+"hint": "Think about how the body gets blood to the systemic circulation when the left side of the heart is blocked or underdeveloped.",
+"rationale": "In duct-dependent lesions, the ductus acts as a vital bridge to bypass obstructions; its closure leads to rapid shock.",
+"qid": "fetalcirc-12"
+},
+{
+"q": "What is the emergency medical intervention used to keep the ductus arteriosus open in neonates with certain congenital heart diseases?",
+"options": [
+"Administration of high-dose oxygen",
+"Immediate umbilical cord re-clamping",
+"Administration of prostaglandins",
+"Administration of surfactant"
+],
+"a": "Administration of prostaglandins",
+"hint": "This pharmacological agent mimics the biochemical environment of the womb to prevent a specific vessel from constricting.",
+"rationale": "Prostaglandins are naturally occurring substances that inhibit ductal closure; giving them exogenously maintains patency.",
+"qid": "fetalcirc-13"
+},
+{
+"q": "Why does the fetus require less energy for thermoregulation compared to a neonate?",
+"options": [
+"The maternal environment maintains the fetal temperature",
+"The fetus has a significantly higher metabolic rate",
+"The high pulmonary vascular resistance prevents heat loss through the lungs",
+"Fetal hemoglobin generates heat as it binds oxygen"
+],
+"a": "The maternal environment maintains the fetal temperature",
+"hint": "Consider the environment the fetus is suspended in while in utero.",
+"rationale": "Because the fetus is surrounded by the mother's body and amniotic fluid, it does not need to generate its own heat.",
+"qid": "fetalcirc-14"
+},
+{
+"q": "Which of the following is an antepartum risk factor for a difficult neonatal transition?",
+"options": [
+"Chorioamnionitis",
+"Maternal opioid exposure",
+"Breech presentation",
+"Oligohydramnios"
+],
+"a": "Oligohydramnios",
+"hint": "Look for a condition involving the amniotic fluid volume that occurs prior to the onset of labor.",
+"rationale": "Abnormal amniotic fluid levels (oligo or polyhydramnios) are conditions existing before labor that can impact transition.",
+"qid": "fetalcirc-15"
+},
+{
+"q": "Which statement accurately describes fetal hemoglobin concentration?",
+"options": [
+"It is 50% lower than in adults to prevent viscous blood flow",
+"It is the same as adults, but the molecules are much larger",
+"It is 50% higher than in adults",
+"It varies based on the mother's dietary iron intake exclusively"
+],
+"a": "It is 50% higher than in adults",
+"hint": "The fetus compensates for low oxygen tension by increasing the amount of 'carriers' available in the blood.",
+"rationale": "Higher concentrations allow the fetus to carry more oxygen despite lower partial pressures of the gas.",
+"qid": "fetalcirc-16"
+},
+{
+"q": "What happens to the fluid that fills the fetal lungs upon the first breath?",
+"options": [
+"It is shunted through the ductus arteriosus to the aorta",
+"It is evaporated by the high temperature of the delivery room",
+"It is cleared from the alveoli to allow for lung expansion",
+"It is immediately converted into surfactant"
+],
+"a": "It is cleared from the alveoli to allow for lung expansion",
+"hint": "In order for air to enter the air sacs, the substance already occupying them must be removed.",
+"rationale": "For gas exchange to occur, the liquid must be removed from the air sacs, usually through absorption and mechanical squeeze.",
+"qid": "fetalcirc-17"
+},
+{
+"q": "Is the following statement True or False? The fetal heart operates in a parallel circuit, while the adult heart operates in a series circuit.",
+"options": [
+"False",
+"True"
+],
+"a": "True",
+"hint": "Consider whether the two sides of the heart supply different circuits or the same one simultaneously in utero.",
+"rationale": "In the fetus, the right and left sides of the heart both pump into the systemic circulation (parallel), whereas in the adult, they pump into sequential circuits (series).",
+"qid": "fetalcirc-18"
+},
+{
+"q": "Which clinical condition is associated with a 'lack of respiratory effort' due to brain asphyxia or maternal opioids?",
+"options": [
+"Duct-dependent heart disease",
+"Respiratory Distress Syndrome",
+"Persistent Pulmonary Hypertension",
+"Failure of neonatal transition"
+],
+"a": "Failure of neonatal transition",
+"hint": "This is a broad category of failure where the newborn does not attempt to take its first vital breaths.",
+"rationale": "Lack of respiratory effort is one of the primary clinical presentations when an infant fails to transition successfully.",
+"qid": "fetalcirc-19"
+},
+{
+"q": "The most oxygenated blood in the fetal circulation is prioritized for delivery to which organs?",
+"options": [
+"The brain, heart, and liver",
+"The lower limbs and placenta",
+"The lungs and the kidneys",
+"The skin and the digestive system"
+],
+"a": "The brain, heart, and liver",
+"hint": "Identify the 'vital organs' that require the most protection from hypoxia during development.",
+"rationale": "Structural design ensures that these vital organs receive blood with the highest possible oxygen content from the umbilical vein.",
+"qid": "fetalcirc-20"
+},
+{
+"q": "Congenital diaphragmatic hernia is often associated with which cause of impaired lung function?",
+"options": [
+"Pneumothorax",
+"Surfactant deficiency",
+"Meconium aspiration",
+"Pulmonary hypoplasia"
+],
+"a": "Pulmonary hypoplasia",
+"hint": "Think about what happens to lung growth when space in the chest cavity is occupied by other organs.",
+"rationale": "In a diaphragmatic hernia, abdominal organs move into the chest, preventing the lungs from growing to their full size (hypoplasia).",
+"qid": "fetalcirc-21"
+},
+{
+"q": "Which vessel returns blood from the fetal body to the placenta?",
+"options": [
+"The umbilical arteries",
+"The ductus arteriosus",
+"The umbilical vein",
+"The inferior vena cava"
+],
+"a": "The umbilical arteries",
+"hint": "Remember that arteries usually carry blood away from the heart (in this case, toward the exchange organ).",
+"rationale": "There are two umbilical arteries that branch from the internal iliac arteries to return deoxygenated blood to the placenta.",
+"qid": "fetalcirc-22"
+},
+{
+"q": "Is the following statement True or False? The drop in pulmonary vascular resistance (PVR) at birth is caused by lung expansion and the clearance of alveolar fluid.",
+"options": [
+"True",
+"False"
+],
+"a": "True",
+"hint": "Recall the major physical change that occurs in the chest when a baby takes its first breath.",
+"rationale": "As the lungs fill with air and fluid is removed, the resistance to blood flow in the pulmonary vessels decreases dramatically.",
+"qid": "fetalcirc-23"
+},
+{
+"q": "Which condition results from the closure of the ductus arteriosus in a neonate with hypoplastic left heart syndrome?",
+"options": [
+"Immediate closure of the foramen ovale",
+"Rapidly improving oxygenation",
+"Shock and severe metabolic acidosis",
+"A sudden drop in pulmonary vascular resistance"
+],
+"a": "Shock and severe metabolic acidosis",
+"hint": "Consider the state of a body that suddenly loses its only source of blood flow to its major organs.",
+"rationale": "Because the left side of the heart cannot support systemic life, closing the 'backdoor' (the ductus) leads to systemic collapse and acid buildup.",
+"qid": "fetalcirc-24"
+},
+{
+"q": "Which of the following is listed as a fetal condition that increases the risk of a difficult transition?",
+"options": [
+"Maternal diabetes",
+"Asphyxia during delivery",
+"Placenta anomalies",
+"Prematurity"
+],
+"a": "Prematurity",
+"hint": "Look for a factor related to the development or timing of the birth of the infant.",
+"rationale": "The text explicitly lists prematurity and congenital anomalies as fetal conditions that complicate the transition.",
+"qid": "fetalcirc-25"
+},
+{
+"q": "What is the primary mechanism for the closure of the ductus venosus?",
+"options": [
+"Increased pressure in the right atrium",
+"Direct compression by the neonatal liver",
+"The first breath of the neonate",
+"Cessation of blood flow from the umbilical vein"
+],
+"a": "Cessation of blood flow from the umbilical vein",
+"hint": "Think about what happens to the umbilical cord and the blood moving through it immediately after birth.",
+"rationale": "Once the cord is clamped, the source of flow through the ductus venosus is removed, leading to its closure.",
+"qid": "fetalcirc-26"
+}
+]
+},
+{
+"id": "chd",
+"name": "Congenital Heart Disease",
+"short": "CHD",
+"cards": [
+{
+"q": "What is the estimated prevalence of congenital heart diseases (CHDs) among liveborn infants?",
+"options": [
+"8 per 1,000 liveborn infants",
+"1 per 1,000 liveborn infants",
+"30 per 1,000 liveborn infants",
+"15 per 1,000 liveborn infants"
+],
+"a": "8 per 1,000 liveborn infants",
+"hint": "Consider the frequency per thousand that equates to slightly less than 1%.",
+"rationale": "This figure represents the standard epidemiological incidence for structural cardiac malformations in the newborn population.",
+"qid": "chd-01"
+},
+{
+"q": "Which genetic condition is most frequently associated with atrioventricular septal defects (AVSDs) and ventricular septal defects (VSDs)?",
+"options": [
+"Down syndrome",
+"Marfan syndrome",
+"DiGeorge syndrome",
+"Turner syndrome"
+],
+"a": "Down syndrome",
+"hint": "Focus on the chromosomal abnormality frequently referred to as Trisomy 21.",
+"rationale": "Trisomy 21 has a very strong clinical association with endocardial cushion defects and septal malformations.",
+"qid": "chd-02"
+},
+{
+"q": "During which gestational period does faulty embryogenesis most commonly result in CHDs?",
+"options": [
+"Weeks 1 to 3",
+"The entire second trimester",
+"Weeks 3 to 8",
+"Weeks 9 to 12"
+],
+"a": "Weeks 3 to 8",
+"hint": "Think of the specific early weeks of the first trimester dedicated to organ formation.",
+"rationale": "This is the sensitive window for cardiac development where environmental and genetic factors most severely disrupt structural formation.",
+"qid": "chd-03"
+},
+{
+"q": "What physical finding is considered pathognomonic for an Atrial Septal Defect (ASD)?",
+"options": [
+"A loud pansystolic murmur at the left sternal edge",
+"A fixed, widely split second heart sound",
+"A continuous, machinery-like murmur",
+"Absent femoral pulses"
+],
+"a": "A fixed, widely split second heart sound",
+"hint": "Look for a unique acoustic feature related to the timing of the S₂ heart sound.",
+"rationale": "This occurs because the increased right-sided volume delays pulmonary valve closure regardless of the respiratory cycle.",
+"qid": "chd-04"
+},
+{
+"q": "A neonate presents with a 'slate-blue tongue' and oxygen saturation of 88% on room air. If the saturation does not rise significantly after 100% oxygen administration, what is the most likely cause?",
+"options": [
+"Primary lung disease",
+"Cyanotic congenital heart disease",
+"A 'well-child' innocent murmur",
+"Standard physiological transition"
+],
+"a": "Cyanotic congenital heart disease",
+"hint": "Consider the results of the Hyperoxia Test in differentiating organ systems.",
+"rationale": "A 'failed' Hyperoxia Test suggests that deoxygenated blood is bypassing the lungs entirely due to a right-to-left shunt.",
+"qid": "chd-05"
+},
+{
+"q": "What is the primary physiological mechanism leading to heart failure in a neonate with a large left-to-right shunt?",
+"options": [
+"Premature closure of the ductus arteriosus",
+"Acute viral myocarditis",
+"Increased systemic vascular resistance",
+"Decreased pulmonary vascular resistance after birth"
+],
+"a": "Decreased pulmonary vascular resistance after birth",
+"hint": "Think about how the transition from fetal to neonatal circulation changes lung pressures.",
+"rationale": "As pulmonary resistance falls over the first weeks, the pressure gradient increases the volume of blood shunting from left to right.",
+"qid": "chd-06"
+},
+{
+"q": "Which condition involves the aorta arising from the right ventricle and the pulmonary artery arising from the left ventricle?",
+"options": [
+"Tetralogy of Fallot",
+"Hypoplastic Left Heart Syndrome",
+"Coarctation of the Aorta",
+"Transposition of the Great Arteries (TGA)"
+],
+"a": "Transposition of the Great Arteries (TGA)",
+"hint": "Consider the name of the defect that implies a switch in vessel position.",
+"rationale": "This creates two parallel circulations where oxygenated blood is recirculated to the lungs and deoxygenated blood to the body.",
+"qid": "chd-07"
+},
+{
+"q": "What is the immediate pharmacological intervention for a neonate suspected of having a duct-dependent obstructive lesion?",
+"options": [
+"Aqueous Penicillin",
+"High-dose Oral Warfarin",
+"Prostaglandin E₁ at 5 ng/kg/min",
+"Intravenous Furosemide"
+],
+"a": "Prostaglandin E₁ at 5 ng/kg/min",
+"hint": "Identify the hormone-like substance used to maintain fetal circulatory pathways.",
+"rationale": "This infusion is vital to prevent or reverse the closure of the ductus arteriosus, maintaining life-sustaining mixing or outflow.",
+"qid": "chd-08"
+},
+{
+"q": "Tetralogy of Fallot is characterized by four cardinal features. Which of the following is NOT one of those features?",
+"options": [
+"Overriding aorta",
+"Right ventricular outflow tract obstruction",
+"Atrial Septal Defect",
+"Right ventricular hypertrophy"
+],
+"a": "Atrial Septal Defect",
+"hint": "Recall the acronym or the specific 'septal' defect involved in the tetrad.",
+"rationale": "The four features include a Ventricular Septal Defect (VSD), not an ASD.",
+"qid": "chd-09"
+},
+{
+"q": "What classic radiological sign is associated with Tetralogy of Fallot on a chest X-ray?",
+"options": [
+"Egg-on-a-string appearance",
+"Figure-of-3 sign",
+"Boot-shaped heart",
+"Snowman sign"
+],
+"a": "Boot-shaped heart",
+"hint": "Think of a type of footwear that describes the cardiac silhouette.",
+"rationale": "The uptilted apex caused by right ventricular hypertrophy gives the heart its characteristic 'coeur en sabot' or boot shape.",
+"qid": "chd-10"
+},
+{
+"q": "Why do older children with Tetralogy of Fallot often reflexively assume a squatting position during 'Tet spells'?",
+"options": [
+"To promote closure of the VSD",
+"To ease abdominal pain from hepatomegaly",
+"To increase peripheral vascular resistance",
+"To decrease systemic venous return"
+],
+"a": "To increase peripheral vascular resistance",
+"hint": "Consider how compressing the femoral arteries changes systemic pressure.",
+"rationale": "Squatting increases systemic pressure, which reduces the right-to-left shunt and forces more blood into the pulmonary circuit.",
+"qid": "chd-11"
+},
+{
+"q": "Maternal Systemic Lupus Erythematosus (SLE) is a risk factor for which specific neonatal cardiac complication?",
+"options": [
+"Pulmonary Valve Stenosis",
+"Complete fetal heart block",
+"Patent Ductus Arteriosus",
+"Tetralogy of Fallot"
+],
+"a": "Complete fetal heart block",
+"hint": "Think about the effect of anti-Ro and anti-La antibodies on the heart's electrical system.",
+"rationale": "The transplacental transfer of anti-Ro and anti-La antibodies can damage the fetal conduction system.",
+"qid": "chd-12"
+},
+{
+"q": "A 2-day-old neonate suddenly develops acute circulatory collapse and severe metabolic acidosis as the ductus arteriosus begins to close. Which diagnosis should be immediately suspected?",
+"options": [
+"Small Ventricular Septal Defect",
+"Secundum Atrial Septal Defect",
+"Isolated Pulmonary Stenosis",
+"Coarctation of the Aorta"
+],
+"a": "Coarctation of the Aorta",
+"hint": "Consider a defect that obstructs the aortic arch, making lower body flow 'duct-dependent'.",
+"rationale": "In critical coarctation, systemic perfusion depends on the ductus; its closure leads to rapid shock and limb ischemia.",
+"qid": "chd-13"
+},
+{
+"q": "What is the most common congenital heart disease (CHD) overall?",
+"options": [
+"Atrial Septal Defect",
+"Ventricular Septal Defect",
+"Tetralogy of Fallot",
+"Patent Ductus Arteriosus"
+],
+"a": "Ventricular Septal Defect",
+"hint": "Identify the defect that involves a hole between the lower chambers of the heart.",
+"rationale": "VSDs are the most frequent structural heart malformation, representing approximately 30% of all CHDs.",
+"qid": "chd-14"
+},
+{
+"q": "Which complication involves irreversible pulmonary vascular damage due to a long-standing unrepaired large VSD?",
+"options": [
+"Eisenmenger syndrome",
+"Hypercyanotic spell",
+"DiGeorge syndrome",
+"Hypoplastic Left Heart Syndrome"
+],
+"a": "Eisenmenger syndrome",
+"hint": "Look for the term describing a 'reversal' of a left-to-right shunt.",
+"rationale": "This occurs when pulmonary hypertension leads to a reversal of the shunt (right-to-left), resulting in cyanosis.",
+"qid": "chd-15"
+},
+{
+"q": "Which of the following is a characteristic of an 'innocent' heart murmur?",
+"options": [
+"Pansystolic duration",
+"Heard best at the right sternal edge",
+"Soft, blowing, and systolic only",
+"Diastolic only"
+],
+"a": "Soft, blowing, and systolic only",
+"hint": "Think about the qualities of a sound that would not indicate structural damage.",
+"rationale": "These features, along with localization and lack of other symptoms, characterize a non-pathological murmur.",
+"qid": "chd-16"
+},
+{
+"q": "What percentage of CHDs typically present with associated non-cardiac abnormalities?",
+"options": [
+"5%",
+"30%",
+"80%",
+"10 to 15%"
+],
+"a": "10 to 15%",
+"hint": "Look for the statistic shared between complex cardiac lesions and extra-cardiac anomalies.",
+"rationale": "Roughly one in ten to one in seven infants with CHDs will also have extra-cardiac malformations.",
+"qid": "chd-17"
+},
+{
+"q": "A bounding pulse and a 'machinery-like' murmur beneath the left clavicle are clinical hallmarks of which condition?",
+"options": [
+"Patent Ductus Arteriosus (PDA)",
+"Atrial Septal Defect (ASD)",
+"Transposition of the Great Arteries",
+"Aortic Stenosis"
+],
+"a": "Patent Ductus Arteriosus (PDA)",
+"hint": "This condition involves a failed closure of a fetal vessel connecting the aorta and pulmonary artery.",
+"rationale": "The continuous flow from the high-pressure aorta to the pulmonary artery throughout the cardiac cycle creates this unique sound.",
+"qid": "chd-18"
+},
+{
+"q": "How do Secundum and Primum Atrial Septal Defects (ASDs) differ based on the material?",
+"options": [
+"Secundum ASDs involve the atrioventricular valves.",
+"Secundum ASDs are located in the center of the septum and are more common.",
+"Primum ASDs are always asymptomatic and close spontaneously.",
+"Secundum ASDs are also known as partial AVSDs."
+],
+"a": "Secundum ASDs are located in the center of the septum and are more common.",
+"hint": "Focus on the location and relative frequency of the most common type of ASD.",
+"rationale": "Accounting for 80% of ASDs, the secundum type is centrally located and does not usually involve the valves.",
+"qid": "chd-19"
+},
+{
+"q": "Which syndrome is associated with an 80% incidence of cardiovascular anomalies, such as common arterial trunk?",
+"options": [
+"Chromosome 22q11.2 deletion",
+"Fetal Alcohol Syndrome",
+"Down syndrome",
+"Turner syndrome"
+],
+"a": "Chromosome 22q11.2 deletion",
+"hint": "Identify the syndrome also known by its chromosomal deletion location.",
+"rationale": "Also known as DiGeorge syndrome, this genetic microdeletion has a very high correlation with major outflow tract anomalies.",
+"qid": "chd-20"
+},
+{
+"q": "Which symptom is specifically noted as occurring 'especially during feeding' in neonates with heart failure?",
+"options": [
+"Loud pansystolic murmur",
+"Bradycardia",
+"Hypercyanotic spells",
+"Marked diaphoresis"
+],
+"a": "Marked diaphoresis",
+"hint": "Think of the clinical term for excessive sweating.",
+"rationale": "Sweating during feeding is a classic sign of the increased metabolic demand and sympathetic activation in infant heart failure.",
+"qid": "chd-21"
+},
+{
+"q": "True or False: Pulmonary stenosis and aortic stenosis typically present as acute circulatory collapse in otherwise healthy-appearing children.",
+"options": [
+"False",
+"True"
+],
+"a": "False",
+"hint": "Determine if these specific stenoses are grouped under 'Well Child' or 'Sick Neonate'.",
+"rationale": "According to the classification, these outflow obstructions usually present in 'well children' as asymptomatic murmurs.",
+"qid": "chd-22"
+},
+{
+"q": "What is the primary danger if a large Ventricular Septal Defect is not surgically repaired?",
+"options": [
+"Spontaneous closure leading to thrombosis",
+"Irreversible pulmonary vascular damage",
+"Complete fetal heart block",
+"The development of Turner syndrome"
+],
+"a": "Irreversible pulmonary vascular damage",
+"hint": "Focus on the long-term impact of high-pressure blood flow on the lungs.",
+"rationale": "High pressure and flow to the lungs over time cause permanent changes to the pulmonary arteries (Eisenmenger syndrome).",
+"qid": "chd-23"
+},
+{
+"q": "In the context of neonatal CHDs, 'Shock' or circulatory collapse typically occurs when:",
+"options": [
+"A soft, blowing systolic murmur is heard",
+"The Hyperoxia Test is performed",
+"The ductus arteriosus naturally closes",
+"The pulmonary vascular resistance falls at 2 weeks"
+],
+"a": "The ductus arteriosus naturally closes",
+"hint": "Identify the event occurring a few days after birth that terminates a crucial fetal bypass.",
+"rationale": "In severe left-heart obstructions, the ductus provides the only route for systemic blood flow; its closure is life-threatening.",
+"qid": "chd-24"
+},
+{
+"q": "Which of the following describes Hypoplastic Left Heart Syndrome (HLHS)?",
+"options": [
+"A large VSD with an overriding aorta",
+"The left ventricle is profoundly underdeveloped",
+"A severe narrowing of the aortic arch",
+"The pulmonary artery arises from the left ventricle"
+],
+"a": "The left ventricle is profoundly underdeveloped",
+"hint": "Look for the definition that implies 'underdevelopment' of a specific chamber.",
+"rationale": "HLHS is a severe obstructive lesion where the left side of the heart cannot support systemic circulation.",
+"qid": "chd-25"
+},
+{
+"q": "Maternal rubella infection is specifically linked to which heart defects?",
+"options": [
+"Complete heart block",
+"Patent ductus arteriosus and peripheral pulmonary stenosis",
+"Transposition of the Great Arteries",
+"AVSD and VSD"
+],
+"a": "Patent ductus arteriosus and peripheral pulmonary stenosis",
+"hint": "Recall the viral trigger associated with a 'machinery' murmur.",
+"rationale": "These specific structural anomalies are classic components of congenital rubella syndrome.",
+"qid": "chd-26"
+},
+{
+"q": "What is the role of a catheter-inserted occlusion coil in the management of CHDs?",
+"options": [
+"To keep the ductus arteriosus open",
+"To bypass the pulmonary artery in TGA",
+"To repair a large VSD and prevent Eisenmenger syndrome",
+"To close a Patent Ductus Arteriosus"
+],
+"a": "To close a Patent Ductus Arteriosus",
+"hint": "Identify the defect that is 'plugged' to prevent lifelong endocarditis risks.",
+"rationale": "The text states that PDA is managed with an occlusion coil to prevent risks like endocarditis.",
+"qid": "chd-27"
+},
+{
+"q": "Which of these is NOT a symptom of heart failure in an infant as described in the text?",
+"options": [
+"Poor weight gain",
+"Tachypnea",
+"Bradycardia",
+"Hepatomegaly"
+],
+"a": "Bradycardia",
+"hint": "Identify the heart rate change that is usually compensatory in nature.",
+"rationale": "The heart typically beats faster (tachycardia) to compensate for failure, rather than slower.",
+"qid": "chd-28"
+},
+{
+"q": "What percentage of CHDs are accounted for by the nine specific defects mentioned in the source?",
+"options": [
+"30%",
+"50%",
+"15%",
+"80%"
+],
+"a": "80%",
+"hint": "Consider how many of the 'most common' defects make up the total group.",
+"rationale": "The nine most common defects (like VSD, PDA, etc.) cover the vast majority of all congenital cardiac lesions.",
+"qid": "chd-29"
+},
+{
+"q": "Which medication is mentioned as a known teratogen that can trigger CHDs?",
+"options": [
+"Aqueous Penicillin",
+"Warfarin",
+"Prostaglandin E₁",
+"Anti-Ro antibodies"
+],
+"a": "Warfarin",
+"hint": "Identify a common anticoagulant drug that is dangerous during embryogenesis.",
+"rationale": "Warfarin is explicitly listed as a teratogenic medication that can lead to heart defects if taken during pregnancy.",
+"qid": "chd-30"
+}
+]
 }
 ];
 
@@ -14374,6 +16139,8 @@ const BUNDLES=[
   {id:'hematology', name:'Hematology', topics:['anemia','anemiaddx','thalassemia','fhlh']},
   {id:'immunology', name:'Immunology', topics:['immunodef','foodallergy']},
   {id:'oncology', name:'Oncology', topics:['leukemia','aml','neuroblastoma','nephroblastoma']},
+  {id:'neurology', name:'Neurology', topics:['meningitis','encephalitis','seizure']},
+  {id:'cardiology', name:'Cardiology', topics:['fetalcirc','chd']},
 ];
 let selectedBundle=null;        // bundle id chosen on the bundle screen
 let bundleCount=10;
