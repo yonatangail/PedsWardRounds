@@ -17097,17 +17097,16 @@ function recordAnswer(card, correct){
 
 // Themed bundles: a quiz across a group of related topics.
 const BUNDLES=[
-  {id:'infectious', name:'Infectious disease', topics:['measles','varicella','mumps','rubella','ebv']},
-  {id:'neonatology', name:'Neonatology', topics:['nrds','nec','neonatalexam']},
-  {id:'gastro', name:'Gastroenterology', topics:['colitis','crohns','celiac','eoe','foodallergy']},
+  {id:'neonatology', name:'Neonatology', topics:['neonatalexam','nrds','nec']},
+  {id:'infectious', name:'Infectious Disease', topics:['measles','ebv','varicella','rubella','mumps']},
   {id:'respiratory', name:'Respiratory Diseases', topics:['asthma','bronchiolitis','pneumonia']},
-  {id:'rheumatic', name:'Rheumatic Diseases', topics:['rheumaticfever','kawasaki','lupus','jia','igav','aps']},
-  {id:'genetic', name:'Genetic Syndromes', topics:['klinefelter','turner','trisomy','praderwilli']},
-  {id:'endocrine', name:'Endocrinology', topics:['hypothyroidism','cah','thyroidnodules','hashimotos','diabetes']},
-  {id:'nephrology', name:'Nephrology', topics:['uti','psgn','nephrotic']},
-  {id:'hematology', name:'Hematology', topics:['anemia','anemiaddx','thalassemia','fhlh','itp']},
-  {id:'immunology', name:'Immunology', topics:['immunodef']},
+  {id:'gastro', name:'Gastroenterology', topics:['celiac','colitis','crohns','eoe','foodallergy']},
+  {id:'rheumatic', name:'Rheumatology', topics:['rheumaticfever','jia','lupus','aps','kawasaki','igav']},
+  {id:'heme_immuno', name:'Hematology & Immunology', topics:['immunodef','anemia','anemiaddx','thalassemia','itp','fhlh']},
   {id:'oncology', name:'Oncology', topics:['leukemia','aml','neuroblastoma','nephroblastoma']},
+  {id:'endocrine', name:'Endocrinology & Metabolism', topics:['diabetes','hypothyroidism','hashimotos','thyroidnodules','cah']},
+  {id:'genetic', name:'Genetic Syndromes', topics:['klinefelter','turner','trisomy','praderwilli']},
+  {id:'nephrology', name:'Nephro-urology', topics:['uti','psgn','nephrotic']},
   {id:'neurology', name:'Neurology', topics:['meningitis','encephalitis','seizure']},
   {id:'cardiology', name:'Cardiology', topics:['fetalcirc','chd']},
 ];
@@ -17364,8 +17363,8 @@ function buildTopicList(){
   if(orphans.length) groups.push({name:'Other topics', topics:orphans});
 
   groups.forEach((g,gi)=>{
-    // sort topics alphabetically within the group
-    const topics=g.topics.slice().sort((a,b)=>a.name.localeCompare(b.name));
+    // keep topics in the curated clinical order set on BUNDLES (not alphabetical)
+    const topics=g.topics;
     const total=topics.reduce((s,t)=>s+t.cards.length,0);
 
     const section=document.createElement('div');
