@@ -17,8 +17,10 @@
 
   :root{
     --bg:#0d1518;
+    --bg-glow:#16292d;
     --panel:#111e22;
     --panel-2:#16282d;
+    --panel-end:#0f1c20;
     --line:#22403f;
     --signal:#38e39b;
     --signal-dim:#1c7a58;
@@ -27,12 +29,39 @@
     --ink:#dbeae6;
     --ink-dim:#7fa39a;
     --ink-faint:#4d6b64;
+    --hover-tint:#193035;
+    --shadow-outer:rgba(0,0,0,.8);
+    /* the ECG monitor readout always looks like a real dark monitor screen,
+       in both themes — these never change with the theme toggle */
+    --ecg-bg:#0b1417;
+    --ecg-signal:#38e39b;
+    --ecg-signal-dim:#1c7a58;
+    --ecg-amber:#f0b23a;
+    --ecg-red:#ff5c68;
+    --ecg-label:#4d6b64;
+  }
+  [data-theme="light"]{
+    --bg:#eef3f1;
+    --bg-glow:#ffffff;
+    --panel:#ffffff;
+    --panel-2:#f3f7f5;
+    --panel-end:#e9f0ed;
+    --line:#dbe6e2;
+    --signal:#0b8a5c;
+    --signal-dim:#bfe8d7;
+    --amber:#a86a0a;
+    --red:#c62839;
+    --ink:#16211d;
+    --ink-dim:#4c665f;
+    --ink-faint:#89a29a;
+    --hover-tint:#eaf5f0;
+    --shadow-outer:rgba(20,40,35,.16);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{
     background:
-      radial-gradient(1200px 600px at 50% -10%, #16292d 0%, transparent 60%),
+      radial-gradient(1200px 600px at 50% -10%, var(--bg-glow) 0%, transparent 60%),
       var(--bg);
     color:var(--ink);
     font-family:'IBM Plex Mono',monospace;
@@ -46,16 +75,18 @@
     padding-right:max(20px, env(safe-area-inset-right));
     -webkit-tap-highlight-color:transparent;   /* no grey flash on tap */
     -webkit-text-size-adjust:100%;
+    transition:background-color .25s,color .25s;
   }
   .frame{
     width:100%;max-width:720px;
     max-height:calc(100dvh - 40px);      /* keep the window a consistent size */
     display:flex;flex-direction:column;position:relative;
-    background:linear-gradient(180deg,var(--panel) 0%,#0f1c20 100%);
+    background:linear-gradient(180deg,var(--panel) 0%,var(--panel-end) 100%);
     border:1px solid var(--line);
     border-radius:14px;
-    box-shadow:0 0 0 1px rgba(56,227,155,.04),0 30px 80px -30px rgba(0,0,0,.8);
+    box-shadow:0 0 0 1px rgba(56,227,155,.04),0 30px 80px -30px var(--shadow-outer);
     overflow:hidden;
+    transition:background-color .25s,border-color .25s;
   }
   /* screens scroll internally instead of stretching the frame */
   .screen{overflow-y:auto;-webkit-overflow-scrolling:touch;min-height:0;flex:1 1 auto}
@@ -83,27 +114,26 @@
     letter-spacing:.14em;text-transform:uppercase;transition:.16s;
   }
   .quit-btn:hover{border-color:var(--red);color:var(--red)}
-  #musicBtn:hover,#beepBtn:hover,#landingMusicBtn:hover{border-color:var(--signal);color:var(--signal)}
-  #musicBtn.on,#beepBtn.on,#landingMusicBtn.on{border-color:var(--signal-dim);color:var(--signal);background:rgba(56,227,155,.08)}
+  #musicBtn:hover,#beepBtn:hover,#settingsBtn:hover,#themeBtn:hover{border-color:var(--signal);color:var(--signal)}
+  #musicBtn.on,#beepBtn.on{border-color:var(--signal-dim);color:var(--signal);background:rgba(56,227,155,.08)}
   .landing-audio{display:flex;justify-content:center;margin:0 auto 22px}
-  #landingMusicBtn{padding:9px 18px;font-size:11px}
 
-  .ecg{height:56px;background:#0b1417;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .ecg{height:56px;background:var(--ecg-bg);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
   .ecg svg{position:absolute;inset:0;width:200%;height:100%;display:block}
-  .ecg path{fill:none;stroke:var(--signal);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+  .ecg path{fill:none;stroke:var(--ecg-signal);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
   /* only the active rhythm's trace is shown */
   .ecg path{display:none}
   .ecg .trace.active{display:block;animation:scroll 6s linear infinite;will-change:transform}
   /* rhythm colors + tempo */
-  .ecg[data-rhythm="normal"] .r-normal{stroke:var(--signal);filter:drop-shadow(0 0 4px var(--signal-dim));animation-duration:6s}
-  .ecg[data-rhythm="tachy"]  .r-tachy {stroke:var(--amber);filter:drop-shadow(0 0 4px rgba(240,178,58,.6));animation-duration:2.4s}
-  .ecg[data-rhythm="vfib"]   .r-vfib  {stroke:var(--red);filter:drop-shadow(0 0 5px var(--red));animation-duration:1.5s}
-  .ecg[data-rhythm="asystole"] .r-asys{stroke:var(--red);filter:drop-shadow(0 0 6px var(--red));animation:none;opacity:.85}
+  .ecg[data-rhythm="normal"] .r-normal{stroke:var(--ecg-signal);filter:drop-shadow(0 0 4px var(--ecg-signal-dim));animation-duration:6s}
+  .ecg[data-rhythm="tachy"]  .r-tachy {stroke:var(--ecg-amber);filter:drop-shadow(0 0 4px rgba(240,178,58,.6));animation-duration:2.4s}
+  .ecg[data-rhythm="vfib"]   .r-vfib  {stroke:var(--ecg-red);filter:drop-shadow(0 0 5px var(--ecg-red));animation-duration:1.5s}
+  .ecg[data-rhythm="asystole"] .r-asys{stroke:var(--ecg-red);filter:drop-shadow(0 0 6px var(--ecg-red));animation:none;opacity:.85}
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .ecg .rlabel{position:absolute;top:5px;right:10px;font-size:9px;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--ink-faint);z-index:2;pointer-events:none;transition:color .3s}
-  .ecg[data-rhythm="tachy"] .rlabel{color:var(--amber)}
-  .ecg[data-rhythm="vfib"] .rlabel,.ecg[data-rhythm="asystole"] .rlabel{color:var(--red)}
+    text-transform:uppercase;color:var(--ecg-label);z-index:2;pointer-events:none;transition:color .3s}
+  .ecg[data-rhythm="tachy"] .rlabel{color:var(--ecg-amber)}
+  .ecg[data-rhythm="vfib"] .rlabel,.ecg[data-rhythm="asystole"] .rlabel{color:var(--ecg-red)}
 
   .vitals{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
   .vital{background:var(--panel);padding:12px 16px}
@@ -114,7 +144,7 @@
     position:relative;transition:.25s}
   .strikes span.hit{background:var(--red);border-color:var(--red);box-shadow:0 0 8px rgba(255,92,104,.5)}
   .strikes span.hit::after{content:"×";position:absolute;inset:0;display:flex;align-items:center;
-    justify-content:center;color:#0b1417;font-size:11px;font-weight:700;line-height:1}
+    justify-content:center;color:#fff;font-size:11px;font-weight:700;line-height:1}
 
   .body{padding:26px 26px 30px}
   .qmeta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:14px}
@@ -133,7 +163,7 @@
     font-family:'IBM Plex Mono',monospace;font-size:14.5px;line-height:1.45;
     transition:border-color .16s,background .16s,transform .06s;
   }
-  .opt:hover:not(:disabled){border-color:var(--signal-dim);background:#193035}
+  .opt:hover:not(:disabled){border-color:var(--signal-dim);background:var(--hover-tint)}
   .opt:active:not(:disabled){transform:translateY(1px)}
   .opt .tag{color:var(--signal);font-weight:600;flex-shrink:0}
   .opt:disabled{cursor:default}
@@ -241,7 +271,7 @@
     background:var(--panel-2);cursor:pointer;transition:.16s;
     font-family:'IBM Plex Mono',monospace;
   }
-  .topic-mode:hover{border-color:var(--signal);background:#193035}
+  .topic-mode:hover{border-color:var(--signal);background:var(--hover-tint)}
   .tm-title{color:var(--signal);font-size:15px;font-weight:600;letter-spacing:.02em}
   .tm-sub{color:var(--ink-dim);font-size:12px}
   /* topic checklist — outer scroller for the list of category toggles */
@@ -264,7 +294,7 @@
     font-family:'IBM Plex Mono',monospace;color:var(--ink);transition:.16s;
     position:sticky;top:0;z-index:2;
   }
-  .group-header:hover{background:#193035}
+  .group-header:hover{background:var(--hover-tint)}
   .group-caret{color:var(--signal);font-size:11px;transition:transform .2s;flex-shrink:0}
   .topic-group.open .group-caret{transform:rotate(90deg)}
   .group-name{font-size:13px;font-weight:600;letter-spacing:.03em;flex:1}
@@ -410,6 +440,26 @@
   .report-actions{display:flex;gap:10px;flex-wrap:wrap}
   .report-actions .btn{flex:1;padding:12px 10px;min-width:120px;font-size:12px}
   .landing-audio{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 22px}
+  .report-period{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .pbtn{background:transparent;border:1px solid var(--line);border-radius:6px;color:var(--ink-dim);
+    cursor:pointer;padding:6px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;
+    letter-spacing:.08em;text-transform:uppercase;transition:.16s}
+  .pbtn:hover{border-color:var(--signal-dim);color:var(--signal)}
+  .pbtn.active{border-color:var(--signal-dim);color:var(--signal);background:rgba(56,227,155,.08)}
+  /* Settings modal sections (question memory, sound, appearance) */
+  .settings-section{padding:14px 0;border-bottom:1px solid var(--line);text-align:left}
+  .settings-section:last-of-type{border-bottom:none;padding-bottom:6px}
+  .mem-head{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+  .mem-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .mem-row:last-child{margin-bottom:0}
+  .mem-label{font-size:12px;color:var(--ink-dim);line-height:1.4}
+  .mem-label b{color:var(--ink);font-variant-numeric:tabular-nums}
+  .mem-select{background:var(--panel-2);border:1px solid var(--line);border-radius:6px;color:var(--ink);
+    font-family:'IBM Plex Mono',monospace;font-size:11px;padding:6px 8px;cursor:pointer}
+  .mem-reset-btn{background:transparent;border:1px solid var(--line);border-radius:6px;color:var(--ink-dim);
+    cursor:pointer;padding:7px 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;
+    letter-spacing:.08em;text-transform:uppercase;transition:.16s;white-space:nowrap}
+  .mem-reset-btn:hover{border-color:var(--amber);color:var(--amber)}
   .hide{display:none!important}
   .disclaimer{font-size:11px;color:var(--ink-faint);margin-top:26px;line-height:1.5;max-width:460px;margin-left:auto;margin-right:auto}
 
@@ -426,6 +476,15 @@
 </style>
 </head>
 <body>
+<script>
+  // applied immediately, before the frame paints, to avoid a flash of the wrong theme
+  (function(){
+    try{
+      var t = localStorage.getItem('wardRoundsTheme_v1');
+      if(t==='light'){ document.documentElement.setAttribute('data-theme','light'); }
+    }catch(e){}
+  })();
+</script>
 <div class="frame">
 
   <section id="start" class="screen">
@@ -467,8 +526,8 @@
       </button>
     </div>
     <div class="landing-audio">
-      <button class="quit-btn" id="landingReportBtn" onclick="showReport(true)">📋 Progress &amp; report</button>
-      <button class="quit-btn" id="landingMusicBtn" onclick="toggleMusic()" aria-label="Toggle background music">♫ music off</button>
+      <button class="quit-btn" id="landingReportBtn" onclick="showHistoryReport()">📋 History &amp; progress</button>
+      <button class="quit-btn" id="settingsBtn" onclick="showSettings()" aria-label="Open settings">⚙ Settings</button>
     </div>
     <p class="disclaimer">Revision aid built from your own flashcards. For self-testing only — not a clinical reference.</p>
   </section>
@@ -584,7 +643,7 @@
     <div class="end-actions">
       <button class="btn btn-revive hide" id="reviveBtn" onclick="revive()">⚡ Adrenaline and shock</button>
       <button class="btn" onclick="restart()">New round</button>
-      <button class="btn btn-ghost" id="reportBtn" onclick="showReport()">📋 Session report</button>
+      <button class="btn btn-ghost" id="reportBtn" onclick="showQuizReport()">📋 Quiz report</button>
     </div>
   </section>
 
@@ -622,6 +681,13 @@
       <span class="report-title" id="reportHeading">Progress report</span>
       <button class="report-close" onclick="hideReport()" aria-label="Close report">✕</button>
     </div>
+    <div class="report-period" id="reportPeriod" style="display:none">
+      <button class="pbtn active" data-period="session" onclick="setReportPeriod('session')">This session</button>
+      <button class="pbtn" data-period="today" onclick="setReportPeriod('today')">Today</button>
+      <button class="pbtn" data-period="week" onclick="setReportPeriod('week')">This week</button>
+      <button class="pbtn" data-period="month" onclick="setReportPeriod('month')">This month</button>
+      <button class="pbtn" data-period="all" onclick="setReportPeriod('all')">All time</button>
+    </div>
     <div class="report-summary" id="reportSummary"></div>
     <div class="report-cols">
       <div class="report-col">
@@ -636,8 +702,72 @@
     <div class="report-full" id="reportFull"></div>
     <div class="report-actions">
       <button class="btn" onclick="exportReport()">⬇ Export report</button>
-      <button class="btn btn-ghost" onclick="confirmResetProgress()">Reset progress</button>
+      <button class="btn btn-ghost" id="reportResetBtn" onclick="reportResetAction()" style="display:none">Clear history</button>
       <button class="btn btn-ghost" onclick="hideReport()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal-box report-box">
+    <div class="report-head">
+      <span class="report-title">Settings</span>
+      <button class="report-close" onclick="hideSettings()" aria-label="Close settings">✕</button>
+    </div>
+
+    <div class="settings-section">
+      <div class="mem-head">Question memory</div>
+      <div class="mem-row">
+        <div class="mem-label"><b id="masteredCount">0</b> questions mastered (seen right twice) are currently held back from rotation.</div>
+        <button class="mem-reset-btn" onclick="resetCorrectQuestionsManual()">↺ Reset now</button>
+      </div>
+      <div class="mem-row">
+        <div class="mem-label">Auto-reset mastered questions after</div>
+        <select class="mem-select" id="autoResetSelect" onchange="setCorrectResetDays(this.value)">
+          <option value="0">Never (manual only)</option>
+          <option value="3">3 days</option>
+          <option value="7">7 days</option>
+          <option value="14">14 days</option>
+          <option value="30">30 days</option>
+          <option value="60">60 days</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="mem-head">Sound</div>
+      <div class="mem-row">
+        <div class="mem-label">Background music volume</div>
+        <select class="mem-select" id="musicVolumeSelect" onchange="setMusicVolume(this.value)">
+          <option value="mute">Mute</option>
+          <option value="low">Low</option>
+          <option value="mid">Mid</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="mem-head">Appearance</div>
+      <div class="mem-row">
+        <div class="mem-label">Light or dark interface</div>
+        <button class="quit-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle light/dark theme">☾ dark</button>
+      </div>
+    </div>
+
+    <div class="report-actions">
+      <button class="btn btn-ghost" onclick="hideSettings()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal-box">
+    <div class="modal-title" id="confirmTitle">Are you sure?</div>
+    <div class="modal-sub" id="confirmSub"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="hideConfirmModal()">Cancel</button>
+      <button class="btn" id="confirmOkBtn" onclick="confirmModalAccept()">Confirm</button>
     </div>
   </div>
 </div>
@@ -2427,7 +2557,7 @@ const TOPICS = [
 ],
 "a": "The presence of crypt hyperplasia",
 "hint": "Focus on the compensatory structural change in the intestinal pits that occurs before villous flattening.",
-"rationale": "Marsh 1 involves only intraepithelial lymphocytosis, whereas Marsh 2 adds the characteristic elongation and hyperplasia of the crypts of Lieberkühn. Hyperplasia before Athrophy",
+"rationale": "Marsh 1 involves only intraepithelial lymphocytosis, whereas Marsh 2 adds the characteristic elongation and hyperplasia of the crypts of Lieberkühn.",
 "qid": "celiac-02"
 },
 {
@@ -16793,6 +16923,140 @@ function resetSession(){
   try{ localStorage.removeItem(SAVE_KEY); }catch(e){}
 }
 
+// ============ SETTINGS (question memory) ============
+const SETTINGS_KEY='wardRoundsSettings_v1';
+const Settings = { correctResetDays:0, musicVolume:'high' };   // musicVolume: 'mute'|'low'|'mid'|'high'
+let lastMusicVolume='high';   // remembered non-mute level, for the quick in-game mute/unmute toggle
+function loadSettings(){
+  try{
+    const raw=localStorage.getItem(SETTINGS_KEY);
+    if(raw) Object.assign(Settings, JSON.parse(raw));
+  }catch(e){/* fail silently */}
+  const sel=document.getElementById('autoResetSelect');
+  if(sel) sel.value=String(Settings.correctResetDays||0);
+  const volSel=document.getElementById('musicVolumeSelect');
+  if(volSel) volSel.value=Settings.musicVolume||'high';
+  if(Settings.musicVolume && Settings.musicVolume!=='mute') lastMusicVolume=Settings.musicVolume;
+}
+function saveSettings(){
+  try{ localStorage.setItem(SETTINGS_KEY, JSON.stringify(Settings)); }catch(e){}
+}
+function setCorrectResetDays(days){
+  Settings.correctResetDays = parseInt(days,10)||0;
+  saveSettings();
+  updateMasteredUI();
+}
+// a question is "mastered" (held back from rotation) once answered correctly
+// twice — unless the auto-reset window has since elapsed
+function isMastered(qid){
+  const rec=Session.correctSeen[qid];
+  if(!rec) return false;
+  const count = typeof rec==='object' ? rec.count : rec;
+  if(count<2) return false;
+  const days=Settings.correctResetDays;
+  if(days>0){
+    const last = typeof rec==='object' ? rec.last : 0;
+    if(!last) return false;               // legacy record with no timestamp — treat as eligible
+    const elapsedDays=(Date.now()-last)/86400000;
+    if(elapsedDays>=days) return false;   // window elapsed — eligible again
+  }
+  return true;
+}
+function seenCount(qid){
+  const rec=Session.correctSeen[qid];
+  if(!rec) return 0;
+  return typeof rec==='object' ? rec.count : rec;
+}
+function masteredCount(){
+  return Object.keys(Session.correctSeen).filter(isMastered).length;
+}
+function updateMasteredUI(){
+  const el=document.getElementById('masteredCount');
+  if(el) el.textContent=masteredCount();
+}
+function resetCorrectQuestionsManual(){
+  showConfirmModal(
+    'Reset mastered questions?',
+    'You\u2019ll see previously-correct questions again in upcoming rounds. This does not affect your history or score stats.',
+    ()=>{
+      Session.correctSeen={};
+      queueSave();
+      updateMasteredUI();
+    },
+    'Reset now'
+  );
+}
+
+// ============ HISTORY (per-round log, for the History & progress report) ============
+const HISTORY_KEY='wardRoundsHistory_v1';
+const AppSessionStart=Date.now();   // when THIS page load began — used for the "This session" filter
+let History=[];
+function loadHistory(){
+  try{
+    const raw=localStorage.getItem(HISTORY_KEY);
+    History = raw ? JSON.parse(raw) : [];
+  }catch(e){ History=[]; }
+}
+function saveHistory(){
+  try{
+    if(History.length>1000) History=History.slice(History.length-1000);   // cap growth
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(History));
+  }catch(e){/* fail silently */}
+}
+function logRoundToHistory(outcome){
+  const total = gameMode==='free' ? (rightCount+wrongCount) : lastRoundSeen;
+  const correct = gameMode==='free' ? rightCount : score;
+  const wrong = total-correct;
+  const pct = total? Math.round(correct/total*100) : 0;
+  const topics = Object.entries(RoundStats).map(([tid,s])=>({tid,name:s.name,correct:s.correct,wrong:s.wrong}));
+  History.push({
+    ts:Date.now(), mode:gameMode, outcome, label:currentRoundLabel||'Mixed',
+    correct, wrong, total, pct,
+    strikes: gameMode==='free' ? null : strikes,
+    topics,
+  });
+  saveHistory();
+}
+function confirmClearHistory(){
+  showConfirmModal(
+    'Clear round history?',
+    'This removes the record of past rounds. It does not affect mastered-question tracking.',
+    ()=>{
+      History=[];
+      saveHistory();
+      renderHistoryReport();
+    },
+    'Clear history'
+  );
+}
+function startOfToday(){ const d=new Date(); d.setHours(0,0,0,0); return d.getTime(); }
+function startOfWeek(){ const d=new Date(); const day=(d.getDay()+6)%7; d.setDate(d.getDate()-day); d.setHours(0,0,0,0); return d.getTime(); }
+function startOfMonth(){ const d=new Date(); d.setDate(1); d.setHours(0,0,0,0); return d.getTime(); }
+function filterHistory(period){
+  if(period==='session') return History.filter(e=>e.ts>=AppSessionStart);
+  if(period==='today')   return History.filter(e=>e.ts>=startOfToday());
+  if(period==='week')    return History.filter(e=>e.ts>=startOfWeek());
+  if(period==='month')   return History.filter(e=>e.ts>=startOfMonth());
+  return History.slice();   // all time
+}
+function aggregateHistory(entries){
+  const byTopic={};
+  let totalCorrect=0, totalWrong=0;
+  entries.forEach(e=>{
+    totalCorrect+=e.correct; totalWrong+=e.wrong;
+    (e.topics||[]).forEach(t=>{
+      if(!byTopic[t.tid]) byTopic[t.tid]={tid:t.tid, name:t.name, correct:0, wrong:0};
+      byTopic[t.tid].correct+=t.correct;
+      byTopic[t.tid].wrong+=t.wrong;
+    });
+  });
+  const rows=Object.values(byTopic).map(r=>{
+    const total=r.correct+r.wrong;
+    return {...r, total, pct: total?Math.round(r.correct/total*100):0};
+  }).sort((a,b)=> b.pct-a.pct || b.total-a.total);
+  return {rounds:entries.length, totalCorrect, totalWrong, rows};
+}
+
 // derive the topic id from a question id like "nec-01" -> "nec"
 function topicIdOf(card){
   if(card.topicId) return card.topicId;
@@ -16809,18 +17073,22 @@ function bundleOf(tid){
   return b ? b.name : 'Other';
 }
 
-// record one answered question into the session ledger
+// record one answered question into the session ledger (lifetime) and the current round
 function recordAnswer(card, correct){
   const tid=topicIdOf(card);
   if(!Session.stats[tid]) Session.stats[tid]={name:topicNameOf(tid), bundle:bundleOf(tid), correct:0, wrong:0};
+  if(!RoundStats[tid]) RoundStats[tid]={name:topicNameOf(tid), correct:0, wrong:0};
   if(correct){
     Session.stats[tid].correct++;
+    RoundStats[tid].correct++;
     Session.totalCorrect++;
-    Session.correctSeen[card.qid]=(Session.correctSeen[card.qid]||0)+1;
+    const count=seenCount(card.qid)+1;
+    Session.correctSeen[card.qid]={count, last:Date.now()};
     // if it was previously wrong and now answered right, it can leave the "wrong" set
     // (kept for the report as "seen wrong" history via stats, so we don't delete stats)
   }else{
     Session.stats[tid].wrong++;
+    RoundStats[tid].wrong++;
     Session.totalWrong++;
     if(card.qid) Session.wrongQids.add(card.qid);
   }
@@ -16847,6 +17115,13 @@ let selectedBundle=null;        // bundle id chosen on the bundle screen
 let bundleCount=10;
 let gameMode='challenge';       // 'challenge' (strikes) or 'free' (no strikes)
 let rightCount=0, wrongCount=0; // free-play tally
+// ---- per-round (single quiz) tracking, reset at the start of every round ----
+let RoundStats={};          // {tid: {name, correct, wrong}} for the round in progress
+let currentRoundLabel='';   // e.g. "Neonatology" or "All topics"
+let lastRoundSeen=0;        // questions attempted in the round that just ended
+let lastRoundOutcome=null;  // 'cleared' | 'flatline' | 'quit'
+let roundLogged=false;      // guards against logging the same round twice
+let pendingOutcome=null;    // 'flatline' while a revive is still available (not yet final)
 
 function setMode(m){
   gameMode=m;
@@ -17220,7 +17495,7 @@ function audioInit(){
   Audio.master.connect(Audio.ctx.destination);
   // separate buses so each layer has its own level
   Audio.beepBus = Audio.ctx.createGain();  Audio.beepBus.gain.value = 0.6;
-  Audio.musicBus = Audio.ctx.createGain(); Audio.musicBus.gain.value = 0.9;
+  Audio.musicBus = Audio.ctx.createGain(); Audio.musicBus.gain.value = MUSIC_VOL_MAP[Settings.musicVolume] ?? 0.9;
   Audio.beepBus.connect(Audio.master);
   Audio.musicBus.connect(Audio.master);
 }
@@ -17255,6 +17530,7 @@ const MUSIC_PROG = [
   {pad:['G3','D4','G4'], arp:['G3','B3','D4','G4']},   // G
 ];
 const MUSIC_TEMPO = { normal:300, tachy:220, vfib:160 }; // ms per arp step by mood
+const MUSIC_VOL_MAP = { mute:0, low:0.22, mid:0.55, high:0.9 };
 let musicBar=0;
 
 function stopPad(){
@@ -17404,21 +17680,40 @@ function ensureRunning(){
 // keep both music buttons (in-game bar + landing screen) in sync
 function syncMusicButtons(){
   const on=Audio.musicOn;
-  [['musicBtn', on?'♫ music':'♫ off'],
-   ['landingMusicBtn', on?'♫ music on':'♫ music off']].forEach(([id,txt])=>{
-    const b=document.getElementById(id);
-    if(!b) return;
-    b.textContent=txt;
+  const b=document.getElementById('musicBtn');
+  if(b){
+    b.textContent = on? '♫ music' : '♫ off';
     b.classList.toggle('on', on);
-  });
+  }
 }
 
+// music volume is a single setting shared by the Settings panel and the quick
+// in-game mute button: 'mute' | 'low' | 'mid' | 'high'
+function applyMusicVolume(){
+  const level = Settings.musicVolume || 'high';
+  const gain = MUSIC_VOL_MAP[level] ?? 0.9;
+  if(Audio.musicBus) Audio.musicBus.gain.value = gain;
+  const shouldPlay = level!=='mute';
+  if(shouldPlay !== Audio.musicOn){
+    Audio.musicOn = shouldPlay;
+    if(shouldPlay){ if(ensureRunning()) startMusic(); }
+    else { stopMusicLoop(); }
+  }
+  syncMusicButtons();
+  const sel=document.getElementById('musicVolumeSelect');
+  if(sel) sel.value=level;
+}
+function setMusicVolume(level){
+  Settings.musicVolume = level;
+  if(level!=='mute') lastMusicVolume=level;
+  saveSettings();
+  applyMusicVolume();
+}
+// quick on/off toggle (in-game bar) — flips between mute and the last chosen level
 function toggleMusic(){
   if(!ensureRunning()) return;
-  Audio.musicOn = !Audio.musicOn;
-  if(Audio.musicOn){ startMusic(); }
-  else { stopMusicLoop(); }
-  syncMusicButtons();
+  if(Settings.musicVolume==='mute'){ setMusicVolume(lastMusicVolume||'high'); }
+  else { lastMusicVolume=Settings.musicVolume; setMusicVolume('mute'); }
 }
 
 function toggleBeep(){
@@ -17429,6 +17724,28 @@ function toggleBeep(){
   else { btn.textContent='♥ off'; btn.classList.remove('on'); stopBeatLoop(); stopFlatline(); }
 }
 
+// ============ THEME (light / dark) ============
+const THEME_KEY='wardRoundsTheme_v1';
+function applyTheme(theme){
+  if(theme==='light'){ document.documentElement.setAttribute('data-theme','light'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  const metaColor=document.querySelector('meta[name="theme-color"]');
+  if(metaColor) metaColor.setAttribute('content', theme==='light' ? '#eef3f1' : '#0d1518');
+  const btn=document.getElementById('themeBtn');
+  if(btn) btn.textContent = theme==='light' ? '☀ light' : '☾ dark';
+}
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme')==='light' ? 'light' : 'dark';
+  const next = current==='light' ? 'dark' : 'light';
+  applyTheme(next);
+  try{ localStorage.setItem(THEME_KEY, next); }catch(e){/* private mode etc — fail silently */}
+}
+function loadTheme(){
+  let theme='dark';
+  try{ theme = localStorage.getItem(THEME_KEY) || 'dark'; }catch(e){}
+  applyTheme(theme);
+}
+
 // Background music should be playing from the main page onward. Browsers (esp. iOS
 // Safari) block audio until the user interacts, so we start it on the very first
 // tap/click/keypress anywhere — unless the user has already toggled it off.
@@ -17437,8 +17754,8 @@ function autoStartMusic(){
   if(musicAutoStarted) return;
   musicAutoStarted=true;
   if(!ensureRunning()) return;
-  // start background music (unless the user already turned it on)
-  if(!Audio.musicOn){
+  // start background music, unless the user has muted it in Settings
+  if(Settings.musicVolume!=='mute' && !Audio.musicOn){
     Audio.musicOn=true;
     startMusic();
     syncMusicButtons();
@@ -17480,16 +17797,17 @@ function setRhythm(strikeCount){
 }
 
 function beginRound(pool, count, label){
-  // Repeat cap: don't reuse a question already answered correctly twice this session.
+  // Repeat cap: don't reuse a question already mastered (answered correctly twice),
+  // unless the auto-reset window (Settings.correctResetDays) has since elapsed.
   // Prefer questions the player hasn't mastered yet (unseen or previously wrong).
-  const eligible = pool.filter(c=> (Session.correctSeen[c.qid]||0) < 2 );
+  const eligible = pool.filter(c=> !isMastered(c.qid) );
   let workingPool = eligible.length>0 ? eligible : pool.slice();  // fall back if all mastered
   // Order so the least-seen / previously-wrong come first, then fill with the rest.
   workingPool = shuffle(workingPool).sort((a,b)=>{
     const aw = Session.wrongQids.has(a.qid) ? 0 : 1;
     const bw = Session.wrongQids.has(b.qid) ? 0 : 1;
     if(aw!==bw) return aw-bw;                       // previously-wrong first
-    return (Session.correctSeen[a.qid]||0) - (Session.correctSeen[b.qid]||0); // fewer prior-correct first
+    return seenCount(a.qid) - seenCount(b.qid);      // fewer prior-correct first
   });
   const n = Math.min(count, workingPool.length);
   deck = workingPool.slice(0,n).map(c=>({...c, options:shuffle(c.options)}));
@@ -17498,6 +17816,8 @@ function beginRound(pool, count, label){
   idx=0;score=0;strikes=0;used5050=false;usedClue=false;revived=false;
   postShockStreak=0;inCriticalRun=false;
   rightCount=0;wrongCount=0;
+  RoundStats={}; currentRoundLabel=label||'All topics'; lastRoundSeen=0; lastRoundOutcome=null;
+  roundLogged=false; pendingOutcome=null;
   const modeTag = gameMode==='free' ? 'Free play' : 'Challenge';
   document.getElementById('barLabel').textContent = 'Ward Round' + (label ? ' · '+label : '') + ' · ' + modeTag;
   // strikes vital only matters in challenge mode
@@ -17645,7 +17965,9 @@ function endGame(outcome){
   const end=document.getElementById('end');
   end.classList.remove('hide');
   document.getElementById('reportModal').classList.remove('show');   // collapse any prior report
+  document.getElementById('settingsModal').classList.remove('show');
   const seen = outcome==='cleared' ? deck.length : idx+1;
+  lastRoundSeen=seen; lastRoundOutcome=outcome;
   document.getElementById('eCorrect').textContent=score;
   document.getElementById('eSeen').textContent=seen;
   const big=document.getElementById('endBig');
@@ -17674,6 +17996,7 @@ function endGame(outcome){
       document.getElementById('endTitle').textContent = pct===100?'Perfect score':'Nice work';
       document.getElementById('endSub').textContent='You finished all '+deck.length+' cases — '+rightCount+' right, '+wrongCount+' wrong ('+pct+'%).';
     }
+    maybeLogRound(outcome);
     return;
   }
 
@@ -17690,6 +18013,7 @@ function endGame(outcome){
       : 'The patient arrested at case '+(idx+1)+'. You answered '+score+' correctly before the third strike. There is one shock left.';
     reviveBtn.classList.toggle('hide', revived);   // one-shot revive
     if(Audio.beepOn) startFlatline();              // brief, quiet flatline tone (~1.6s)
+    if(!revived) pendingOutcome='flatline';         // not final yet — a revive is still on the table
   }else if(outcome==='quit'){
     audioStop();
     endEcg.classList.add('hide');
@@ -17708,6 +18032,20 @@ function endGame(outcome){
     document.getElementById('endTitle').textContent = pct===100?'Flawless round':'Round survived';
     document.getElementById('endSub').textContent = 'You cleared all '+deck.length+' cases with '+score+' correct ('+pct+'%) and '+strikes+' strike'+(strikes===1?'':'s')+' to spare.';
   }
+  maybeLogRound(outcome);
+}
+
+// Log the round to History once it has truly finished. A first flatline with a
+// revive still available isn't final — it's only logged if the player abandons
+// it (restart()) rather than reviving, or flatlines a second time.
+function maybeLogRound(outcome){
+  if(roundLogged) return;
+  if(outcome==='cleared' || outcome==='quit' || (outcome==='flatline' && revived)){
+    logRoundToHistory(outcome);
+    roundLogged=true;
+    pendingOutcome=null;
+    updateMasteredUI();
+  }
 }
 
 function quitRound(){
@@ -17721,6 +18059,7 @@ function revive(){
   void flash.offsetWidth;         // restart the animation
   flash.classList.add('fire');
   revived=true;
+  pendingOutcome=null;            // round continues — no longer a pending final flatline
   // back from the brink: drop to 2 strikes (critical — ECG shows V-fib)
   strikes=2;
   postShockStreak=0;
@@ -17751,6 +18090,14 @@ function triggerROSC(){
 }
 
 function restart(){
+  // if the player is walking away from an unresolved flatline (revive still
+  // available but they chose not to use it), that round is now final — log it
+  if(pendingOutcome && !roundLogged){
+    logRoundToHistory(pendingOutcome);
+    roundLogged=true;
+    pendingOutcome=null;
+    updateMasteredUI();
+  }
   audioStop();
   document.getElementById('game').classList.add('hide');
   document.getElementById('end').classList.add('hide');
@@ -17758,104 +18105,164 @@ function restart(){
   document.getElementById('bundleSelect').classList.add('hide');
   document.getElementById('allSelect').classList.add('hide');
   document.getElementById('reportModal').classList.remove('show');
+  document.getElementById('settingsModal').classList.remove('show');
   document.getElementById('start').classList.remove('hide');
 }
 
-// ============ SESSION REPORT ============
-// Build a per-topic breakdown from the session ledger, sorted by accuracy.
-function buildReportRows(){
-  return Object.entries(Session.stats).map(([tid,s])=>{
-    const total=s.correct+s.wrong;
-    return {
-      tid, name:s.name, bundle:s.bundle,
-      correct:s.correct, wrong:s.wrong, total,
-      pct: total? Math.round(s.correct/total*100) : 0,
-    };
-  }).filter(r=>r.total>0)
-    .sort((a,b)=> b.pct-a.pct || b.total-a.total);
-}
+// ============ REPORTS ============
+// Two distinct reports:
+//  - Quiz report: only the round that was just played (end-of-quiz screen)
+//  - History report: aggregated across past rounds, filterable by period (landing page)
 function pctClass(p){ return p>=80?'g':(p>=50?'a':'r'); }
+function rowHTML(r){
+  return '<div class="rrow"><span class="rname">'+r.name+'</span>'+
+    '<span class="rpct '+pctClass(r.pct)+'">'+r.pct+'%</span>'+
+    '<span style="color:var(--ink-faint)">'+r.correct+'/'+r.total+'</span></div>';
+}
+function outcomeLabel(outcome){
+  return outcome==='cleared' ? 'Cleared' : outcome==='flatline' ? 'Flatlined' : outcome==='quit' ? 'Ended early' : '—';
+}
+function buildRoundReportRows(){
+  return Object.entries(RoundStats).map(([tid,s])=>{
+    const total=s.correct+s.wrong;
+    return {tid, name:s.name, correct:s.correct, wrong:s.wrong, total, pct: total?Math.round(s.correct/total*100):0};
+  }).filter(r=>r.total>0).sort((a,b)=> b.pct-a.pct || b.total-a.total);
+}
 
-function showReport(fromLanding){
-  const rows=buildReportRows();
-  const modal=document.getElementById('reportModal');
-  const total=Session.totalCorrect+Session.totalWrong;
-  const overallPct= total? Math.round(Session.totalCorrect/total*100) : 0;
+let reportIsHistory=false;          // which mode the report modal is currently in
+let currentReportPeriod='session';  // history-mode period filter
 
-  document.getElementById('reportHeading').textContent = fromLanding===true ? 'Progress report' : 'Session report';
+// ---- quiz report (single round just played) ----
+function showQuizReport(){
+  reportIsHistory=false;
+  const periodEl=document.getElementById('reportPeriod');
+  if(periodEl) periodEl.style.display='none';
+  const resetBtn=document.getElementById('reportResetBtn');
+  if(resetBtn) resetBtn.style.display='none';
+  document.getElementById('reportHeading').textContent='Quiz report';
+
+  const rows=buildRoundReportRows();
+  const correct = gameMode==='free' ? rightCount : score;
+  const total = gameMode==='free' ? (rightCount+wrongCount) : lastRoundSeen;
+  const wrong = total-correct;
+  const pct = total? Math.round(correct/total*100) : 0;
+
+  document.getElementById('reportSummary').innerHTML =
+    (currentRoundLabel? '<b>'+currentRoundLabel+'</b> — ' : '')+
+    'This round: <b>'+total+'</b> question'+(total===1?'':'s')+' — <b>'+correct+'</b> right, <b>'+wrong+'</b> wrong (<b>'+pct+'%</b>).'+
+    (gameMode!=='free' ? ' Outcome: <b>'+outcomeLabel(lastRoundOutcome)+'</b>.' : '');
+  const strong=rows.filter(r=>r.pct>=70);
+  const weak=rows.filter(r=>r.pct<70);
+  document.getElementById('reportStrong').innerHTML = strong.length? strong.map(rowHTML).join('') : '<div class="report-empty">—</div>';
+  document.getElementById('reportWeak').innerHTML = weak.length? weak.map(rowHTML).join('') : '<div class="report-empty">Nothing missed — nice.</div>';
+  document.getElementById('reportFull').innerHTML = rows.length? '<div class="rfh">Topics this round</div>'+rows.map(rowHTML).join('') : '';
+  document.getElementById('reportModal').classList.add('show');
+}
+
+// ---- history report (landing page — aggregated, filterable by period) ----
+const PERIOD_LABEL={session:'this session', today:'today', week:'this week', month:'this month', all:'all time'};
+function showHistoryReport(){
+  reportIsHistory=true;
+  const periodEl=document.getElementById('reportPeriod');
+  if(periodEl){
+    periodEl.style.display='flex';
+    periodEl.querySelectorAll('.pbtn').forEach(b=>b.classList.toggle('active', b.dataset.period===currentReportPeriod));
+  }
+  const resetBtn=document.getElementById('reportResetBtn');
+  if(resetBtn) resetBtn.style.display='';
+  document.getElementById('reportHeading').textContent='History & progress';
+  renderHistoryReport();
+  document.getElementById('reportModal').classList.add('show');
+}
+function setReportPeriod(period){
+  currentReportPeriod=period;
+  document.querySelectorAll('#reportPeriod .pbtn').forEach(b=>b.classList.toggle('active', b.dataset.period===period));
+  renderHistoryReport();
+}
+function renderHistoryReport(){
+  const entries=filterHistory(currentReportPeriod);
+  const {rounds, totalCorrect, totalWrong, rows}=aggregateHistory(entries);
+  const total=totalCorrect+totalWrong;
+  const pct= total? Math.round(totalCorrect/total*100) : 0;
+  const periodLabel=PERIOD_LABEL[currentReportPeriod];
 
   if(total===0){
-    document.getElementById('reportSummary').innerHTML='No questions answered yet. Play a round and your progress will show up here — and it\u2019s saved between sessions.';
+    document.getElementById('reportSummary').innerHTML='No questions answered '+periodLabel+' yet.'+
+      (currentReportPeriod!=='all' ? ' Try a wider range, or play a round.' : ' Play a round and your progress will show up here.');
     document.getElementById('reportStrong').innerHTML='<div class="report-empty">No data yet.</div>';
     document.getElementById('reportWeak').innerHTML='';
     document.getElementById('reportFull').innerHTML='';
-  }else{
-    document.getElementById('reportSummary').innerHTML =
-      'You\u2019ve answered <b>'+total+'</b> questions over <b>'+Session.roundsPlayed+'</b> round'+(Session.roundsPlayed===1?'':'s')+' — '+
-      '<b>'+Session.totalCorrect+'</b> right, <b>'+Session.totalWrong+'</b> wrong (<b>'+overallPct+'%</b>). '+
-      (Session.wrongQids.size? 'You have <b>'+Session.wrongQids.size+'</b> question'+(Session.wrongQids.size===1?'':'s')+' flagged to revisit.' : 'No questions flagged to revisit — nice.');
-    const strong=rows.filter(r=>r.pct>=70).slice(0,5);
-    const weak=rows.filter(r=>r.pct<70).slice(-5).reverse();
-    const rowHTML=r=>'<div class="rrow"><span class="rname">'+r.name+'</span>'+
-      '<span class="rpct '+pctClass(r.pct)+'">'+r.pct+'%</span>'+
-      '<span style="color:var(--ink-faint)">'+r.correct+'/'+r.total+'</span></div>';
-    document.getElementById('reportStrong').innerHTML = strong.length? strong.map(rowHTML).join('') : '<div class="report-empty">Keep going to build a picture.</div>';
-    document.getElementById('reportWeak').innerHTML = weak.length? weak.map(rowHTML).join('') : '<div class="report-empty">Nothing struggling yet.</div>';
-    document.getElementById('reportFull').innerHTML = '<div class="rfh">All topics played</div>'+rows.map(rowHTML).join('');
+    return;
   }
-  modal.classList.add('show');
+  document.getElementById('reportSummary').innerHTML =
+    'You\u2019ve answered <b>'+total+'</b> questions over <b>'+rounds+'</b> round'+(rounds===1?'':'s')+' '+periodLabel+' — '+
+    '<b>'+totalCorrect+'</b> right, <b>'+totalWrong+'</b> wrong (<b>'+pct+'%</b>).';
+  const strong=rows.filter(r=>r.pct>=70).slice(0,5);
+  const weak=rows.filter(r=>r.pct<70).slice(-5).reverse();
+  document.getElementById('reportStrong').innerHTML = strong.length? strong.map(rowHTML).join('') : '<div class="report-empty">Keep going to build a picture.</div>';
+  document.getElementById('reportWeak').innerHTML = weak.length? weak.map(rowHTML).join('') : '<div class="report-empty">Nothing struggling yet.</div>';
+  document.getElementById('reportFull').innerHTML = '<div class="rfh">All topics ('+periodLabel+')</div>'+rows.map(rowHTML).join('');
 }
+
 function hideReport(){ document.getElementById('reportModal').classList.remove('show'); }
 
-function confirmResetProgress(){
-  if(confirm('Reset all saved progress? This clears your session stats and the questions flagged to revisit. This cannot be undone.')){
-    resetSession();
-    showReport(true);   // re-render empty
-  }
+// the report modal's reset/clear action is context-dependent: it only appears
+// in history mode, where it clears the round-history log (not mastery tracking)
+function reportResetAction(){
+  if(reportIsHistory) confirmClearHistory();
 }
 
-// Build a plain-text version of the report and download it.
+// Build a plain-text version of the currently-open report and download it.
 function exportReport(){
-  const rows=buildReportRows();
-  const total=Session.totalCorrect+Session.totalWrong;
-  const overallPct= total? Math.round(Session.totalCorrect/total*100) : 0;
   const d=new Date();
   const stamp=d.toLocaleString();
   const lines=[];
-  lines.push('WARD ROUNDS — PEDIATRICS · SESSION REPORT');
-  lines.push(stamp);
-  lines.push('='.repeat(48));
-  lines.push('');
-  lines.push('Rounds played : '+Session.roundsPlayed);
-  lines.push('Questions      : '+total);
-  lines.push('Correct        : '+Session.totalCorrect);
-  lines.push('Wrong          : '+Session.totalWrong);
-  lines.push('Overall score  : '+overallPct+'%');
-  lines.push('Flagged to revisit: '+Session.wrongQids.size);
-  lines.push('');
-  // group rows by bundle (subject area)
-  const byBundle={};
-  rows.forEach(r=>{ (byBundle[r.bundle]=byBundle[r.bundle]||[]).push(r); });
-  lines.push('BY TOPIC (sorted best → worst within each subject area)');
-  lines.push('-'.repeat(48));
-  Object.keys(byBundle).sort().forEach(bn=>{
+  lines.push('WARD ROUNDS — PEDIATRICS');
+  if(reportIsHistory){
+    const periodLabel=PERIOD_LABEL[currentReportPeriod];
+    lines.push((periodLabel.charAt(0).toUpperCase()+periodLabel.slice(1))+' REPORT');
+    lines.push(stamp);
+    lines.push('='.repeat(48));
+    const entries=filterHistory(currentReportPeriod);
+    const {rounds, totalCorrect, totalWrong, rows}=aggregateHistory(entries);
+    const total=totalCorrect+totalWrong;
+    const pct= total? Math.round(totalCorrect/total*100) : 0;
     lines.push('');
-    lines.push('['+bn+']');
-    byBundle[bn].sort((a,b)=>b.pct-a.pct).forEach(r=>{
+    lines.push('Rounds played : '+rounds);
+    lines.push('Questions      : '+total);
+    lines.push('Correct        : '+totalCorrect);
+    lines.push('Wrong          : '+totalWrong);
+    lines.push('Overall score  : '+pct+'%');
+    lines.push('');
+    lines.push('BY TOPIC (best → worst)');
+    lines.push('-'.repeat(48));
+    rows.forEach(r=>{
       const pad=(r.name.length>34? r.name.slice(0,33)+'…' : r.name).padEnd(35,' ');
       lines.push('  '+pad+' '+String(r.pct).padStart(3)+'%   ('+r.correct+'/'+r.total+')');
     });
-  });
-  lines.push('');
-  // strengths / weaknesses summary
-  const strong=rows.filter(r=>r.pct>=70).slice(0,8).map(r=>r.name);
-  const weak=rows.filter(r=>r.pct<70).map(r=>r.name);
-  lines.push('STRONGEST : '+(strong.length? strong.join(', ') : '—'));
-  lines.push('NEEDS WORK : '+(weak.length? weak.join(', ') : '—'));
-  if(Session.wrongQids.size){
+  }else{
+    lines.push('QUIZ REPORT');
+    lines.push(stamp);
+    lines.push('='.repeat(48));
     lines.push('');
-    lines.push('QUESTION IDS TO REVISIT:');
-    lines.push('  '+[...Session.wrongQids].sort().join(', '));
+    lines.push('Round          : '+(currentRoundLabel||'—'));
+    if(gameMode!=='free') lines.push('Outcome        : '+outcomeLabel(lastRoundOutcome));
+    const rows=buildRoundReportRows();
+    const correct = gameMode==='free' ? rightCount : score;
+    const total = gameMode==='free' ? (rightCount+wrongCount) : lastRoundSeen;
+    const wrong = total-correct;
+    const pct = total? Math.round(correct/total*100) : 0;
+    lines.push('Questions      : '+total);
+    lines.push('Correct        : '+correct);
+    lines.push('Wrong          : '+wrong);
+    lines.push('Score          : '+pct+'%');
+    lines.push('');
+    lines.push('BY TOPIC');
+    lines.push('-'.repeat(48));
+    rows.forEach(r=>{
+      const pad=(r.name.length>34? r.name.slice(0,33)+'…' : r.name).padEnd(35,' ');
+      lines.push('  '+pad+' '+String(r.pct).padStart(3)+'%   ('+r.correct+'/'+r.total+')');
+    });
   }
   lines.push('');
   lines.push('Generated by Ward Rounds — Pediatrics. Self-testing aid, not a clinical reference.');
@@ -17863,7 +18270,7 @@ function exportReport(){
   const blob=new Blob([lines.join('\n')], {type:'text/plain'});
   const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
-  const fname='ward-rounds-report-'+d.toISOString().slice(0,10)+'.txt';
+  const fname='ward-rounds-'+(reportIsHistory?currentReportPeriod:'quiz')+'-'+d.toISOString().slice(0,10)+'.txt';
   a.href=url; a.download=fname;
   document.body.appendChild(a); a.click();
   setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
@@ -17884,12 +18291,53 @@ function exportReport(){
 
 // restore saved progress from a previous session (if any)
 loadSession();
+loadSettings();
+loadHistory();
+loadTheme();
+updateMasteredUI();
+
+// ============ SETTINGS MODAL ============
+function showSettings(){
+  updateMasteredUI();
+  document.getElementById('settingsModal').classList.add('show');
+}
+function hideSettings(){ document.getElementById('settingsModal').classList.remove('show'); }
+
+// ============ GENERIC CONFIRM MODAL ============
+// A styled, in-app replacement for window.confirm() — used for destructive actions
+// like resetting mastered questions or clearing history. Stacks above other modals.
+let confirmModalCallback=null;
+function showConfirmModal(title, sub, onConfirm, confirmLabel){
+  document.getElementById('confirmTitle').textContent=title;
+  document.getElementById('confirmSub').textContent=sub;
+  document.getElementById('confirmOkBtn').textContent=confirmLabel||'Confirm';
+  confirmModalCallback=onConfirm;
+  document.getElementById('confirmModal').classList.add('show');
+}
+function hideConfirmModal(){
+  document.getElementById('confirmModal').classList.remove('show');
+  confirmModalCallback=null;
+}
+function confirmModalAccept(){
+  const cb=confirmModalCallback;
+  hideConfirmModal();
+  if(cb) cb();
+}
+
 // close the report modal on Escape / backdrop tap
 document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && document.getElementById('confirmModal').classList.contains('show')){ hideConfirmModal(); return; }
   if(e.key==='Escape' && document.getElementById('reportModal').classList.contains('show')) hideReport();
+  if(e.key==='Escape' && document.getElementById('settingsModal').classList.contains('show')) hideSettings();
 });
 document.getElementById('reportModal').addEventListener('click',e=>{
   if(e.target.id==='reportModal') hideReport();
+});
+document.getElementById('settingsModal').addEventListener('click',e=>{
+  if(e.target.id==='settingsModal') hideSettings();
+});
+document.getElementById('confirmModal').addEventListener('click',e=>{
+  if(e.target.id==='confirmModal') hideConfirmModal();
 });
 </script>
 </body>
